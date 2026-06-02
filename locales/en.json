@@ -49,10 +49,10 @@
     "add_to_cart": "Add to cart",
     "sold_out": "Sold out",
     "delivery_estimate": "Ships in 24–48h — Estimated delivery within 3 days",
-    "guarantee_line": "30-day money-back · 2-year manufacturer warranty",
+    "guarantee_line": "15-day money-back guarantee",
     "usp": {
       "shipping": "Free shipping within mainland France",
-      "returns": "Free returns within 30 days"
+      "returns": "Free returns within 15 days"
     },
     "description": {
       "benefits": "Why you'll love it",
@@ -64,9 +64,9 @@
       "shipping_express": "Express: 24–48h — €9.90",
       "shipping_europe": "Europe: 5–8 days — from €14.90",
       "shipping_details": "Shipping details",
-      "returns_title": "Returns & Warranty",
-      "returns_30": "Returns within 30 days, original packaging",
-      "warranty_2y": "2-year manufacturer warranty",
+      "returns_title": "Returns",
+      "returns_30": "Returns within 15 days, original packaging",
+      "warranty_2y": "",
       "returns_details": "Returns policy",
       "support_title": "Support",
       "support_chat": "Chat advice 7 days a week",

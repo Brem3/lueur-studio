@@ -2,8 +2,10 @@
   <div class="hero__media">
     {% if section.settings.video != blank %}
       {{ section.settings.video | video_tag: image_size: '1600x', autoplay: true, loop: true, muted: true, controls: false }}
+    {% elsif section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '100vw', widths: '800, 1200, 1600, 1800' }}
     {% else %}
-      {% render 'media', image: section.settings.image, label: shop.name, width: 1800, loading: 'eager' %}
+      <div class="hero__backdrop"></div>
     {% endif %}
   </div>
   <div class="hero__overlay"></div>

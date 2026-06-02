@@ -3,7 +3,7 @@
    Luminaires d'extérieur haut de gamme
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Backgrounds */
@@ -32,8 +32,8 @@
   --color-error:           #C0392B;
 
   /* Typographie */
-  --font-display:    'Cormorant Garamond', Georgia, serif;
-  --font-body:       'Jost', sans-serif;
+  --font-display:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-hero:       clamp(3.5rem, 8vw, 7rem);
   --text-h1:         clamp(2.5rem, 5vw, 4.5rem);
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: var(--text-h1); }
-h2 { font-size: var(--text-h2); font-style: italic; }
+h2 { font-size: var(--text-h2); }
 h3 { font-size: var(--text-h3); }
 
 p { margin: 0 0 1em; color: var(--color-text-primary); }
@@ -137,7 +137,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--color-gold);
   margin-bottom: 1rem;
 }
-.section__title { font-style: italic; }
+.section__title { }
 
 /* ---------- Signature elements ---------- */
 .lamp-glow {
@@ -271,7 +271,7 @@ button { font-family: inherit; cursor: pointer; }
 .product-card:hover .product-card__media img { transform: scale(1.04); }
 .product-card__badge { position: absolute; top: 1rem; left: 1rem; z-index: 2; }
 .product-card__body { padding: 1.25rem 1.5rem 1.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
-.product-card__title { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; }
+.product-card__title { font-family: var(--font-display); font-size: 1.4rem; }
 .product-card__price { font-family: var(--font-body); }
 .product-card__price .price--compare { color: var(--color-text-muted); text-decoration: line-through; font-size: 0.9rem; margin-right: 0.5rem; }
 .product-card__price .price--current { color: var(--color-gold); font-size: 1.15rem; font-weight: var(--weight-medium); }
@@ -302,7 +302,6 @@ button { font-family: inherit; cursor: pointer; }
 .lueur-placeholder__label {
   position: relative;
   font-family: var(--font-display);
-  font-style: italic;
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: var(--color-gold);
   text-align: center;
@@ -386,7 +385,7 @@ button { font-family: inherit; cursor: pointer; }
 .mega-card { display: block; }
 .mega-card__media { aspect-ratio: 16 / 10; border-radius: var(--border-radius-md); overflow: hidden; margin-bottom: 0.75rem; }
 .mega-card__media .lueur-placeholder__label { font-size: 1rem; }
-.mega-card__title { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--color-gold); }
+.mega-card__title { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-gold); }
 .mega-menu__links { display: flex; gap: 1.5rem; padding-bottom: 2rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem; }
 .mega-menu__links a { font-size: var(--text-sm); color: var(--color-text-secondary); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 .mega-menu__links a:hover { color: var(--color-gold); }
@@ -411,6 +410,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .hero__media { position: absolute; inset: 0; z-index: 0; }
 .hero__media img, .hero__media video { width: 100%; height: 100%; object-fit: cover; }
+.hero__backdrop { width: 100%; height: 100%; background: linear-gradient(160deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 60%); }
 .hero__overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(180deg, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.35) 45%, rgba(13,27,42,0.85) 100%);
@@ -422,7 +422,6 @@ button { font-family: inherit; cursor: pointer; }
 .hero__content { position: relative; z-index: 2; max-width: 900px; padding-inline: 1.5rem; }
 .hero__title {
   font-size: var(--text-hero);
-  font-style: italic;
   letter-spacing: var(--tracking-hero);
   margin-bottom: 1rem;
 }
@@ -457,7 +456,7 @@ button { font-family: inherit; cursor: pointer; }
 .story--reverse .story__media { order: 2; }
 .story__media { aspect-ratio: 4 / 5; border-radius: var(--border-radius-lg); overflow: hidden; }
 .story__content { max-width: 520px; }
-.story__title { font-style: italic; margin-bottom: 1.5rem; }
+.story__title { margin-bottom: 1.5rem; }
 .story__num { display: inline-block; font-family: var(--font-body); color: var(--color-gold); letter-spacing: var(--tracking-wide); margin-bottom: 1rem; }
 @media (max-width: 860px) {
   .story { grid-template-columns: 1fr; }
@@ -472,7 +471,7 @@ button { font-family: inherit; cursor: pointer; }
 .space-tile__media .lueur-placeholder::before { opacity: 0.6; }
 .space-tile__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(13,27,42,0.9) 100%); }
 .space-tile__caption { position: absolute; bottom: 1.75rem; left: 1.75rem; right: 1.75rem; z-index: 2; }
-.space-tile__name { font-family: var(--font-display); font-style: italic; font-size: 1.75rem; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+.space-tile__name { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-text-primary); margin-bottom: 0.4rem; }
 .space-tile__link { font-size: var(--text-sm); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-gold); }
 
 /* ============================================================
@@ -482,7 +481,7 @@ button { font-family: inherit; cursor: pointer; }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
 .stat__num { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--color-gold); line-height: 1; }
 .stat__label { font-size: var(--text-sm); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-secondary); margin-top: 0.5rem; }
-.quote { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 3vw, 2.25rem); max-width: 760px; margin: 0 auto 1rem; color: var(--color-text-primary); }
+.quote { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); max-width: 760px; margin: 0 auto 1rem; color: var(--color-text-primary); }
 .quote__author { font-size: var(--text-sm); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-secondary); }
 @media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
 
@@ -536,7 +535,7 @@ button { font-family: inherit; cursor: pointer; }
 .product__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .product__thumb[aria-current="true"] { border-color: var(--color-gold); }
 .product__info { position: sticky; top: 100px; }
-.product__title { font-family: var(--font-display); font-style: italic; font-size: 2.4rem; margin: 0.75rem 0 1rem; }
+.product__title { font-family: var(--font-display); font-size: 2.4rem; margin: 0.75rem 0 1rem; }
 .product__price { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; }
 .product__price .compare { color: var(--color-text-muted); text-decoration: line-through; font-size: 0.9rem; }
 .product__price .current { color: var(--color-gold); font-size: 1.8rem; font-weight: var(--weight-medium); }
@@ -560,12 +559,12 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Description framework */
 .product-description { max-width: 760px; margin-inline: auto; }
-.product-description__headline { font-family: var(--font-display); font-style: italic; font-size: var(--text-h3); margin-bottom: 1rem; }
+.product-description__headline { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: 1rem; }
 .product-description__intro { font-size: var(--text-body-lg); color: var(--color-text-secondary); }
 .product-description h5 { font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-gold); margin: 2rem 0 1rem; }
 .benefits-list li, .features-list li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; color: var(--color-text-primary); }
 .benefits-list li::before, .features-list li::before { content: '✦'; position: absolute; left: 0; color: var(--color-gold); }
-.product-description__feeling { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-text-primary); margin-top: 2rem; }
+.product-description__feeling { font-family: var(--font-display); font-size: 1.35rem; color: var(--color-text-primary); margin-top: 2rem; }
 
 /* Specs table */
 .product-specs { width: 100%; border-collapse: collapse; max-width: 760px; margin-inline: auto; }
@@ -576,7 +575,7 @@ button { font-family: inherit; cursor: pointer; }
 /* FAQ accordion */
 .faq { max-width: 760px; margin-inline: auto; }
 .faq details { border-bottom: 1px solid var(--color-border); }
-.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 0; cursor: pointer; list-style: none; font-family: var(--font-display); font-style: italic; font-size: 1.25rem; color: var(--color-text-primary); }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 0; cursor: pointer; list-style: none; font-family: var(--font-display); font-size: 1.25rem; color: var(--color-text-primary); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: '+'; color: var(--color-gold); font-family: var(--font-body); font-size: 1.5rem; transition: transform 0.2s; }
 .faq details[open] summary::after { content: '−'; }
@@ -589,7 +588,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Reviews */
 .reviews { max-width: 900px; margin-inline: auto; }
-.review-hero { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 3vw, 2rem); text-align: center; max-width: 640px; margin: 0 auto 3rem; color: var(--color-text-primary); }
+.review-hero { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); text-align: center; max-width: 640px; margin: 0 auto 3rem; color: var(--color-text-primary); }
 .review-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .review-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: 1.5rem; }
 .review-card__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
@@ -602,7 +601,7 @@ button { font-family: inherit; cursor: pointer; }
    COLLECTION
    ============================================================ */
 .collection-hero { text-align: center; padding-block: clamp(3rem, 6vw, 5rem) 0; }
-.collection-hero__title { font-style: italic; }
+.collection-hero__title { }
 .collection-hero__desc { max-width: 600px; margin: 1rem auto 0; color: var(--color-text-secondary); }
 .collection-toolbar { display: flex; justify-content: space-between; align-items: center; margin-block: 2.5rem 2rem; font-size: var(--text-sm); color: var(--color-text-secondary); }
 
@@ -615,7 +614,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .article-card { display: block; }
 .article-card__media { aspect-ratio: 4 / 3; border-radius: var(--border-radius-md); overflow: hidden; margin-bottom: 1rem; }
-.article-card__title { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; margin-bottom: 0.4rem; }
+.article-card__title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
 .article-card__meta { font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-muted); }
 .article-card__excerpt { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: 0.5rem; }
 

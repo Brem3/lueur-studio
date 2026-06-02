@@ -15,8 +15,8 @@
       "blocks": {
         "u1": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison offerte +150€" } },
         "u2": { "type": "usp", "settings": { "icon": "shield", "text": "IP65 Certifié" } },
-        "u3": { "type": "usp", "settings": { "icon": "check", "text": "Garantie 2 ans" } },
-        "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 30 jours" } }
+        "u3": { "type": "usp", "settings": { "icon": "leaf", "text": "Design français" } },
+        "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 15 jours" } }
       },
       "block_order": ["u1", "u2", "u3", "u4"]
     },
@@ -62,7 +62,7 @@
       "blocks": {
         "st1": { "type": "stat", "settings": { "value": "1 200+", "label": "foyers éclairés" } },
         "st2": { "type": "stat", "settings": { "value": "4,9 ★", "label": "note moyenne" } },
-        "st3": { "type": "stat", "settings": { "value": "2 ans", "label": "de garantie" } }
+        "st3": { "type": "stat", "settings": { "value": "15 j", "label": "satisfait ou remboursé" } }
       },
       "block_order": ["st1", "st2", "st3"]
     },

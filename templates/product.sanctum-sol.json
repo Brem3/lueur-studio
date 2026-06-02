@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": { "show_klarna": true }
+    },
+    "usp": {
+      "type": "usp-band",
+      "blocks": {
+        "u1": { "type": "usp", "settings": { "icon": "headset", "text": "Service client 7j/7" } },
+        "u2": { "type": "usp", "settings": { "icon": "leaf", "text": "Conçu à Paris" } },
+        "u3": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison en 3 jours" } },
+        "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 15 jours" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4"]
+    },
+    "description": {
+      "type": "product-description",
+      "settings": {
+        "headline": "Vos allées méritent autant d'attention que votre salon — à partir du coucher du soleil.",
+        "intro": "La Sanctum Sol capte la lumière du jour pour révéler votre jardin la nuit venue. Borne solaire au design sculptural, elle transforme une allée banale en chemin lumineux digne des plus belles propriétés. Aucun câblage. Aucune contrainte.",
+        "benefits": "<li>Transforme une allée banale en chemin lumineux digne des plus belles propriétés</li><li>Installation en 5 minutes, sans outil, sans électricien</li><li>Résiste aux pluies hivernales, au gel et aux UV de l'été</li>",
+        "features": "<li>Certification IP67 — protégée contre l'immersion jusqu'à 1 mètre</li><li>Panneau solaire monocristallin haute efficacité (rendement +30% vs panneaux classiques)</li><li>LED 3000K — lumière chaude proche de la bougie, sans éblouissement</li><li>Finition laiton brossé traitée anti-oxydation — vieillit avec grâce</li>",
+        "feeling": "Offrir à votre jardin une lumière douce, digne et autonome — c'est ça, la promesse de Sanctum Sol."
+      }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {
+        "title": "Ce qu'en disent nos clients",
+        "featured_quote": "Je ne pensais pas qu'une simple borne pouvait changer à ce point l'allure de mon allée la nuit."
+      },
+      "blocks": {
+        "r1": { "type": "review", "settings": { "author": "Sophie L.", "date": "Mai 2025", "rating": 5, "body": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse, exactement ce que je cherchais pour mon allée." } },
+        "r2": { "type": "review", "settings": { "author": "Marc D.", "date": "Avril 2025", "rating": 5, "body": "Installation en 5 minutes, la tige s'enfonce toute seule dans le gravier. La finition laiton est superbe." } },
+        "r3": { "type": "review", "settings": { "author": "Inès B.", "date": "Mars 2025", "rating": 5, "body": "Tient toute la nuit même après une journée mitigée. Résiste parfaitement à la pluie depuis 3 mois." } },
+        "r4": { "type": "review", "settings": { "author": "Thomas V.", "date": "Février 2025", "rating": 4, "body": "Un vrai objet de décoration, même éteinte en journée. J'en ai repris deux autres." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"]
+    },
+    "specs": {
+      "type": "product-specs",
+      "settings": { "title": "Fiche technique" },
+      "blocks": {
+        "sp1": { "type": "spec", "settings": { "label": "Hauteur", "value": "45 cm" } },
+        "sp2": { "type": "spec", "settings": { "label": "Diamètre", "value": "12 cm" } },
+        "sp3": { "type": "spec", "settings": { "label": "Matériau", "value": "Aluminium moulé + verre trempé satiné" } },
+        "sp4": { "type": "spec", "settings": { "label": "Indice de protection", "value": "IP67" } },
+        "sp5": { "type": "spec", "settings": { "label": "Source lumineuse", "value": "LED intégrée 4W, 3000K blanc chaud" } },
+        "sp6": { "type": "spec", "settings": { "label": "Énergie", "value": "Panneau solaire monocristallin" } },
+        "sp7": { "type": "spec", "settings": { "label": "Autonomie", "value": "8 à 12h" } },
+        "sp8": { "type": "spec", "settings": { "label": "Temps de charge", "value": "6h en plein soleil" } },
+        "sp9": { "type": "spec", "settings": { "label": "Poids", "value": "0,9 kg" } }
+      },
+      "block_order": ["sp1", "sp2", "sp3", "sp4", "sp5", "sp6", "sp7", "sp8", "sp9"]
+    },
+    "info": {
+      "type": "product-info",
+      "settings": {
+        "shipping_url": "/pages/livraison",
+        "returns_url": "/pages/retours",
+        "contact_url": "/pages/contact"
+      }
+    },
+    "faq": {
+      "type": "product-faq",
+      "settings": {
+        "title": "Questions fréquentes",
+        "link_label": "Voir toutes les questions",
+        "link_url": "/pages/faq"
+      },
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "question": "La borne reste-t-elle allumée toute la nuit ?", "answer": "<p>Oui, avec une charge complète (6h de soleil), elle tient 8 à 12h selon la saison.</p>" } },
+        "q2": { "type": "qa", "settings": { "question": "Peut-on l'utiliser en hiver avec peu de soleil ?", "answer": "<p>Elle s'adapte à la lumière disponible ; en hiver, l'autonomie peut descendre à 4–6h.</p>" } },
+        "q3": { "type": "qa", "settings": { "question": "Comment la planter dans le sol ?", "answer": "<p>Une tige de fixation incluse s'insère sans outil dans la terre ou le gravier.</p>" } },
+        "q4": { "type": "qa", "settings": { "question": "Est-elle vraiment étanche ?", "answer": "<p>Oui : sa certification IP67 la protège même contre une immersion temporaire jusqu'à 1 mètre.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"]
+    },
+    "related": {
+      "type": "related-products",
+      "settings": { "title": "À associer avec votre choix" }
+    }
+  },
+  "order": ["main", "usp", "description", "reviews", "specs", "info", "faq", "related"]
+}

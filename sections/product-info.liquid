@@ -2,7 +2,7 @@
   <div class="container">
     <div class="grid grid--3">
       <div class="reveal">
-        <h3 style="font-style:italic;font-size:1.5rem">{{ 'product.info.shipping_title' | t }}</h3>
+        <h3 style="font-size:1.5rem">{{ 'product.info.shipping_title' | t }}</h3>
         <ul class="info-block" style="margin-top:1rem">
           <li>{% render 'icon', name: 'truck' %} {{ 'product.info.shipping_standard' | t }}</li>
           <li>{% render 'icon', name: 'bolt' %} {{ 'product.info.shipping_express' | t }}</li>
@@ -11,15 +11,14 @@
         <a href="{{ section.settings.shipping_url }}" class="info-block link" style="display:inline-block;margin-top:1rem">{{ 'product.info.shipping_details' | t }} →</a>
       </div>
       <div class="reveal">
-        <h3 style="font-style:italic;font-size:1.5rem">{{ 'product.info.returns_title' | t }}</h3>
+        <h3 style="font-size:1.5rem">{{ 'product.info.returns_title' | t }}</h3>
         <ul class="info-block" style="margin-top:1rem">
           <li>{% render 'icon', name: 'return' %} {{ 'product.info.returns_30' | t }}</li>
-          <li>{% render 'icon', name: 'shield' %} {{ 'product.info.warranty_2y' | t }}</li>
         </ul>
         <a href="{{ section.settings.returns_url }}" class="info-block link" style="display:inline-block;margin-top:1rem">{{ 'product.info.returns_details' | t }} →</a>
       </div>
       <div class="reveal">
-        <h3 style="font-style:italic;font-size:1.5rem">{{ 'product.info.support_title' | t }}</h3>
+        <h3 style="font-size:1.5rem">{{ 'product.info.support_title' | t }}</h3>
         <ul class="info-block" style="margin-top:1rem">
           <li>{% render 'icon', name: 'headset' %} {{ 'product.info.support_chat' | t }}</li>
           <li>{% render 'icon', name: 'leaf' %} {{ 'product.info.support_french' | t }}</li>

@@ -10,7 +10,7 @@
         "u1": { "type": "usp", "settings": { "icon": "headset", "text": "Service client 7j/7" } },
         "u2": { "type": "usp", "settings": { "icon": "leaf", "text": "Design français" } },
         "u3": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison en 3 jours" } },
-        "u4": { "type": "usp", "settings": { "icon": "shield", "text": "Garantie 2 ans" } }
+        "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 15 jours" } }
       },
       "block_order": ["u1", "u2", "u3", "u4"]
     },
@@ -45,10 +45,9 @@
         "sp2": { "type": "spec", "settings": { "label": "Matériaux", "value": "Aluminium moulé, verre trempé" } },
         "sp3": { "type": "spec", "settings": { "label": "Indice de protection", "value": "IP67" } },
         "sp4": { "type": "spec", "settings": { "label": "Source lumineuse", "value": "LED 4W, 3000K (blanc chaud)" } },
-        "sp5": { "type": "spec", "settings": { "label": "Autonomie", "value": "8 à 12h selon luminosité" } },
-        "sp6": { "type": "spec", "settings": { "label": "Garantie", "value": "2 ans fabricant" } }
+        "sp5": { "type": "spec", "settings": { "label": "Autonomie", "value": "8 à 12h selon luminosité" } }
       },
-      "block_order": ["sp1", "sp2", "sp3", "sp4", "sp5", "sp6"]
+      "block_order": ["sp1", "sp2", "sp3", "sp4", "sp5"]
     },
     "info": {
       "type": "product-info",

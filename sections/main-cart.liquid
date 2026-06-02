@@ -10,7 +10,7 @@
               {% render 'media', image: item.image, label: item.product.title, width: 200 %}
             </a>
             <div style="flex:1">
-              <a href="{{ item.url }}" style="font-family:var(--font-display);font-style:italic;font-size:1.25rem">{{ item.product.title }}</a>
+              <a href="{{ item.url }}" style="font-family:var(--font-display);font-size:1.25rem">{{ item.product.title }}</a>
               {% unless item.variant.title contains 'Default' %}
                 <div style="font-size:var(--text-sm);color:var(--color-text-secondary)">{{ item.variant.title }}</div>
               {% endunless %}
@@ -26,7 +26,7 @@
         <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem;gap:1rem;flex-wrap:wrap">
           <button type="submit" name="update" class="btn-secondary">{{ 'cart.update' | t }}</button>
           <div style="text-align:right">
-            <div style="font-family:var(--font-display);font-style:italic;font-size:1.5rem;margin-bottom:1rem">
+            <div style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1rem">
               {{ 'cart.subtotal' | t }} : <span style="color:var(--color-gold)">{{ cart.total_price | money }}</span>
             </div>
             <button type="submit" name="checkout" class="btn-primary">{{ 'cart.checkout' | t }}</button>
