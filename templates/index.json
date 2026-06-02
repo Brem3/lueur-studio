@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -13,18 +22,41 @@
     "usp": {
       "type": "usp-band",
       "blocks": {
-        "u1": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison offerte +150€" } },
-        "u2": { "type": "usp", "settings": { "icon": "shield", "text": "IP65 Certifié" } },
-        "u3": { "type": "usp", "settings": { "icon": "check", "text": "Garantie 2 ans" } },
-        "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 30 jours" } }
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "icon": "truck",
+            "text": "Livraison offerte +150€"
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "icon": "check",
+            "text": "Garantie 2 ans"
+          }
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {
+            "icon": "return",
+            "text": "Retours 30 jours"
+          }
+        }
       },
-      "block_order": ["u1", "u2", "u3", "u4"]
+      "block_order": [
+        "u1",
+        "u3",
+        "u4"
+      ],
+      "settings": {}
     },
     "bestsellers": {
       "type": "featured-products",
       "settings": {
         "eyebrow": "Sélection",
         "title": "Nos pièces signature",
+        "collection": "",
         "limit": 3,
         "cta_label": "Voir toute la collection",
         "cta_url": "/collections/all"
@@ -33,6 +65,7 @@
     "story": {
       "type": "storytelling",
       "settings": {
+        "reverse": false,
         "number": "",
         "title": "La lumière comme architecture d'ambiance",
         "body": "<p>Chez Lueur Studio, nous ne fabriquons pas de simples lampes. Nous sculptons la lumière pour révéler vos extérieurs dès la tombée du soir — comme un hôtel particulier qui s'éveille à la nuit.</p>",
@@ -42,29 +75,76 @@
     },
     "spaces": {
       "type": "shop-by-space",
+      "blocks": {
+        "s1": {
+          "type": "space",
+          "settings": {
+            "name": "Terrasse",
+            "link_label": "Découvrir",
+            "link": "/collections/terrasse"
+          }
+        },
+        "s2": {
+          "type": "space",
+          "settings": {
+            "name": "Jardin",
+            "link_label": "Découvrir",
+            "link": "/collections/jardin"
+          }
+        },
+        "s3": {
+          "type": "space",
+          "settings": {
+            "name": "Allée & Entrée",
+            "link_label": "Découvrir",
+            "link": "/collections/allees"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "Par usage",
         "title": "Trouvez la lumière pour chaque espace"
-      },
-      "blocks": {
-        "s1": { "type": "space", "settings": { "name": "Terrasse", "link_label": "Découvrir", "link": "/collections/terrasse" } },
-        "s2": { "type": "space", "settings": { "name": "Jardin", "link_label": "Découvrir", "link": "/collections/jardin" } },
-        "s3": { "type": "space", "settings": { "name": "Allée & Entrée", "link_label": "Découvrir", "link": "/collections/allees" } }
-      },
-      "block_order": ["s1", "s2", "s3"]
+      }
     },
     "social": {
       "type": "social-proof",
+      "blocks": {
+        "st1": {
+          "type": "stat",
+          "settings": {
+            "value": "1 200+",
+            "label": "foyers éclairés"
+          }
+        },
+        "st2": {
+          "type": "stat",
+          "settings": {
+            "value": "4,9 ★",
+            "label": "note moyenne"
+          }
+        },
+        "st3": {
+          "type": "stat",
+          "settings": {
+            "value": "2 ans",
+            "label": "de garantie"
+          }
+        }
+      },
+      "block_order": [
+        "st1",
+        "st2",
+        "st3"
+      ],
       "settings": {
         "quote": "« Nos soirées d'été ont changé de dimension. La terrasse est devenue la plus belle pièce de la maison. »",
         "author": "Camille R. — Aix-en-Provence"
-      },
-      "blocks": {
-        "st1": { "type": "stat", "settings": { "value": "1 200+", "label": "foyers éclairés" } },
-        "st2": { "type": "stat", "settings": { "value": "4,9 ★", "label": "note moyenne" } },
-        "st3": { "type": "stat", "settings": { "value": "2 ans", "label": "de garantie" } }
-      },
-      "block_order": ["st1", "st2", "st3"]
+      }
     },
     "guide": {
       "type": "guide-teaser",
@@ -83,15 +163,16 @@
         "title": "Idées d'aménagement",
         "blog": "inspirations"
       }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "eyebrow": "Lettre Lueur",
-        "title": "Recevez nos idées d'aménagement",
-        "body": "Inspirations, conseils d'éclairage et offres en avant-première. Une à deux fois par mois, jamais plus."
-      }
     }
   },
-  "order": ["hero", "usp", "bestsellers", "story", "spaces", "social", "guide", "blog", "newsletter"]
+  "order": [
+    "hero",
+    "usp",
+    "bestsellers",
+    "story",
+    "spaces",
+    "social",
+    "guide",
+    "blog"
+  ]
 }
