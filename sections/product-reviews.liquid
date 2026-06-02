@@ -1,0 +1,77 @@
+<section class="section section--secondary" id="reviews">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">{{ 'product.reviews.eyebrow' | t }}</span>
+      <h2 class="section__title">{{ section.settings.title }}</h2>
+      {%- assign rating = product.metafields.reviews.rating.value | default: 4.9 -%}
+      {%- assign rcount = product.metafields.reviews.count.value | default: 87 -%}
+      <div style="margin-top:1rem">{% render 'star-rating', rating: rating, count: rcount %}</div>
+    </div>
+
+    <div class="reviews reveal">
+      {% if section.settings.featured_quote != blank %}
+        <p class="review-hero">« {{ section.settings.featured_quote }} »</p>
+      {% endif %}
+
+      <div class="review-grid">
+        {% for block in section.blocks %}
+          <article class="review-card" {{ block.shopify_attributes }}>
+            <div class="review-card__head">
+              <span class="review-card__author">{{ block.settings.author }}</span>
+              <span class="review-card__date">{{ block.settings.date }}</span>
+            </div>
+            <div style="margin-bottom:0.6rem">{% render 'star-rating', rating: block.settings.rating, show_text: false %}</div>
+            <p class="review-card__body">{{ block.settings.body }}</p>
+          </article>
+        {% endfor %}
+      </div>
+
+      <div class="section__head" style="margin-top:2.5rem;margin-bottom:0">
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">{{ 'product.reviews.judgeme_note' | t }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ce qu'en disent nos clients"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_quote",
+      "label": "Citation phare",
+      "default": "Je ne pensais pas qu'une lampe pouvait changer à ce point l'atmosphère d'un jardin."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        { "type": "text", "id": "author", "label": "Prénom", "default": "Sophie L." },
+        { "type": "text", "id": "date", "label": "Date", "default": "Mai 2025" },
+        { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "body", "label": "Avis", "default": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis clients",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review", "settings": { "author": "Marc D.", "date": "Avril 2025", "body": "Installation en 5 minutes, aucune mauvaise surprise. La finition laiton est superbe." } },
+        { "type": "review", "settings": { "author": "Inès B.", "date": "Mars 2025", "body": "Résiste parfaitement à la pluie depuis 3 mois. Je recommande sans hésiter." } },
+        { "type": "review", "settings": { "author": "Thomas V.", "date": "Mars 2025", "body": "Un vrai objet de décoration, même éteint. Service client réactif." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

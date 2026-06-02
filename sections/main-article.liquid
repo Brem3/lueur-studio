@@ -1,0 +1,31 @@
+<article class="section">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="section__eyebrow">{{ article.published_at | date: '%d %B %Y' }}</span>
+      <h1 class="section__title" style="font-style:italic">{{ article.title }}</h1>
+    </header>
+
+    {% if article.image %}
+      <div class="story__media reveal" style="aspect-ratio:16/9;max-width:1000px;margin:0 auto 3rem">
+        {% render 'media', image: article.image, label: article.title, width: 1400, loading: 'eager' %}
+      </div>
+    {% endif %}
+
+    <div class="page-content rte reveal">
+      {{ article.content }}
+    </div>
+
+    {% render 'gold-rule' %}
+
+    <div class="page-content" style="text-align:center">
+      <a href="{{ blog.url }}" class="btn-secondary">← {{ 'blog.back' | t }}</a>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

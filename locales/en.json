@@ -1,0 +1,111 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "placeholder": "Image coming soon",
+    "coming_soon": "Coming soon",
+    "scroll": "Scroll"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "nav_primary": "Primary navigation",
+    "nav_utility": "Utility navigation",
+    "menu": "Menu"
+  },
+  "header": {
+    "collections": "Collections",
+    "buying_guide": "Buying guide",
+    "inspirations": "Inspirations",
+    "all_collection": "Shop all",
+    "new": "New arrivals",
+    "bestsellers": "Best-sellers",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "product": {
+    "badge": {
+      "bestseller": "Best-seller",
+      "new": "New",
+      "limited": "Limited edition",
+      "popular": "Popular",
+      "low_stock": "Low stock"
+    },
+    "reviews": {
+      "eyebrow": "Verified reviews",
+      "count": "{{ count }} reviews",
+      "judgeme_note": "Reviews collected via Judge.me. Connect the app to display your verified reviews."
+    },
+    "gallery": {
+      "view": "View image {{ index }}"
+    },
+    "klarna": "From {{ amount }}/mo in 3 interest-free payments",
+    "quantity": "Quantity",
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "delivery_estimate": "Ships in 24–48h — Estimated delivery within 3 days",
+    "guarantee_line": "30-day money-back · 2-year manufacturer warranty",
+    "usp": {
+      "shipping": "Free shipping within mainland France",
+      "returns": "Free returns within 30 days"
+    },
+    "description": {
+      "benefits": "Why you'll love it",
+      "features": "What makes it unique"
+    },
+    "info": {
+      "shipping_title": "Shipping",
+      "shipping_standard": "Standard: 3–5 business days — free over €150",
+      "shipping_express": "Express: 24–48h — €9.90",
+      "shipping_europe": "Europe: 5–8 days — from €14.90",
+      "shipping_details": "Shipping details",
+      "returns_title": "Returns & Warranty",
+      "returns_30": "Returns within 30 days, original packaging",
+      "warranty_2y": "2-year manufacturer warranty",
+      "returns_details": "Returns policy",
+      "support_title": "Support",
+      "support_chat": "Chat advice 7 days a week",
+      "support_french": "French craftsmanship & service",
+      "contact": "Contact us"
+    }
+  },
+  "collection": {
+    "count": "{{ count }} products",
+    "empty": "No products in this collection yet."
+  },
+  "blog": {
+    "eyebrow": "Inspirations",
+    "back": "Back to articles"
+  },
+  "cart": {
+    "title": "Your cart",
+    "update": "Update",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search for a light…",
+    "results": "{{ count }} results for \"{{ terms }}\"",
+    "no_results": "No results for \"{{ terms }}\"."
+  },
+  "newsletter": {
+    "email": "Email address",
+    "placeholder": "Your email address",
+    "submit": "Subscribe",
+    "success": "Thank you! Your subscription is confirmed."
+  },
+  "error_404": {
+    "code": "Error 404",
+    "title": "This page went dark",
+    "body": "The page you're looking for doesn't exist or has moved. Let's get you back to the light.",
+    "home": "Back to home"
+  }
+}

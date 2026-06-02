@@ -1,0 +1,36 @@
+<div class="container">
+  <header class="collection-hero reveal">
+    <h1 class="collection-hero__title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <div class="collection-hero__desc rte">{{ collection.description }}</div>
+    {% endif %}
+  </header>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="collection-toolbar">
+      <span>{{ 'collection.count' | t: count: collection.products_count }}</span>
+    </div>
+
+    {% paginate collection.products by 12 %}
+      {% if collection.products.size > 0 %}
+        <div class="grid grid--3">
+          {% for product in collection.products %}
+            {% render 'product-card', product: product %}
+          {% endfor %}
+        </div>
+        <div style="text-align:center;margin-top:3rem">{{ paginate | default_pagination }}</div>
+      {% else %}
+        <p style="text-align:center;color:var(--color-text-secondary)">{{ 'collection.empty' | t }}</p>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,111 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Étiquetés « {{ tags }} »",
+      "page": "Page {{ page }}"
+    },
+    "placeholder": "Visuel à venir",
+    "coming_soon": "Bientôt disponible",
+    "scroll": "Faire défiler"
+  },
+  "accessibility": {
+    "skip_to_content": "Aller au contenu",
+    "nav_primary": "Navigation principale",
+    "nav_utility": "Navigation utilitaire",
+    "menu": "Menu"
+  },
+  "header": {
+    "collections": "Collections",
+    "buying_guide": "Guide d'achat",
+    "inspirations": "Inspirations",
+    "all_collection": "Toute la collection",
+    "new": "Nouveautés",
+    "bestsellers": "Best-sellers",
+    "search": "Rechercher",
+    "account": "Compte",
+    "cart": "Panier"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "product": {
+    "badge": {
+      "bestseller": "Best-seller",
+      "new": "Nouveauté",
+      "limited": "Édition limitée",
+      "popular": "Populaire",
+      "low_stock": "Stock limité"
+    },
+    "reviews": {
+      "eyebrow": "Avis vérifiés",
+      "count": "{{ count }} avis",
+      "judgeme_note": "Avis collectés via Judge.me. Connectez l'application pour afficher vos avis vérifiés."
+    },
+    "gallery": {
+      "view": "Voir le visuel {{ index }}"
+    },
+    "klarna": "À partir de {{ amount }}/mois en 3x sans frais",
+    "quantity": "Quantité",
+    "add_to_cart": "Ajouter au panier",
+    "sold_out": "Épuisé",
+    "delivery_estimate": "Expédié sous 24–48h — Livraison estimée sous 3 jours",
+    "guarantee_line": "Satisfait ou remboursé 30 jours · Garantie fabricant 2 ans",
+    "usp": {
+      "shipping": "Livraison offerte en France métropolitaine",
+      "returns": "Retours gratuits sous 30 jours"
+    },
+    "description": {
+      "benefits": "Pourquoi vous allez l'adorer",
+      "features": "Ce qui la rend unique"
+    },
+    "info": {
+      "shipping_title": "Livraison",
+      "shipping_standard": "Standard : 3–5 jours ouvrés — offerte dès 150€",
+      "shipping_express": "Express : 24–48h — 9,90€",
+      "shipping_europe": "Europe : 5–8 jours — dès 14,90€",
+      "shipping_details": "Détails de livraison",
+      "returns_title": "Retours & Garantie",
+      "returns_30": "Retours sous 30 jours, emballage d'origine",
+      "warranty_2y": "Garantie fabricant 2 ans",
+      "returns_details": "Politique de retours",
+      "support_title": "Accompagnement",
+      "support_chat": "Conseil par chat 7j/7",
+      "support_french": "Service à la française",
+      "contact": "Nous contacter"
+    }
+  },
+  "collection": {
+    "count": "{{ count }} produits",
+    "empty": "Aucun produit dans cette collection pour le moment."
+  },
+  "blog": {
+    "eyebrow": "Inspirations",
+    "back": "Retour aux articles"
+  },
+  "cart": {
+    "title": "Votre panier",
+    "update": "Mettre à jour",
+    "subtotal": "Sous-total",
+    "checkout": "Passer commande",
+    "empty": "Votre panier est vide.",
+    "continue": "Continuer mes achats"
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Rechercher un luminaire…",
+    "results": "{{ count }} résultats pour « {{ terms }} »",
+    "no_results": "Aucun résultat pour « {{ terms }} »."
+  },
+  "newsletter": {
+    "email": "Adresse e-mail",
+    "placeholder": "Votre adresse e-mail",
+    "submit": "S'inscrire",
+    "success": "Merci ! Votre inscription est confirmée."
+  },
+  "error_404": {
+    "code": "Erreur 404",
+    "title": "Cette page s'est éteinte",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée. Revenons vers la lumière.",
+    "home": "Retour à l'accueil"
+  }
+}

@@ -1,0 +1,15 @@
+<section class="section" style="min-height:60vh;display:grid;place-items:center;text-align:center">
+  <div class="container">
+    <span class="section__eyebrow">{{ 'error_404.code' | t }}</span>
+    <h1 class="section__title" style="font-style:italic">{{ 'error_404.title' | t }}</h1>
+    <p style="color:var(--color-text-secondary);max-width:480px;margin:1rem auto 2rem">{{ 'error_404.body' | t }}</p>
+    <a href="{{ routes.root_url }}" class="btn-primary">{{ 'error_404.home' | t }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "settings": []
+}
+{% endschema %}

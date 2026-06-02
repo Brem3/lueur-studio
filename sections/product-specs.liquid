@@ -1,0 +1,50 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal"><h2 class="section__title">{{ section.settings.title }}</h2></div>
+    <table class="product-specs reveal">
+      {% for block in section.blocks %}
+        <tr {{ block.shopify_attributes }}>
+          <td>{{ block.settings.label }}</td>
+          <td>{{ block.settings.value }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fiche technique",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Fiche technique"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Ligne",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé", "default": "Dimensions" },
+        { "type": "text", "id": "value", "label": "Valeur", "default": "H 45 cm × Ø 12 cm" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fiche technique",
+      "blocks": [
+        { "type": "spec", "settings": { "label": "Dimensions", "value": "H 45 cm × Ø 12 cm" } },
+        { "type": "spec", "settings": { "label": "Matériaux", "value": "Aluminium moulé, verre trempé" } },
+        { "type": "spec", "settings": { "label": "Indice de protection", "value": "IP67" } },
+        { "type": "spec", "settings": { "label": "Source lumineuse", "value": "LED 4W, 3000K (blanc chaud)" } },
+        { "type": "spec", "settings": { "label": "Autonomie", "value": "8 à 12h selon luminosité" } },
+        { "type": "spec", "settings": { "label": "Garantie", "value": "2 ans fabricant" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

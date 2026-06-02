@@ -1,0 +1,72 @@
+<section class="section">
+  <div class="container social-proof reveal">
+    <div class="stats">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          <div class="stat" {{ block.shopify_attributes }}>
+            <div class="stat__num">{{ block.settings.value }}</div>
+            <div class="stat__label">{{ block.settings.label }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% render 'gold-rule' %}
+
+    {% if section.settings.quote != blank %}
+      <blockquote class="quote">{{ section.settings.quote }}</blockquote>
+      <cite class="quote__author">{{ section.settings.author }}</cite>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Preuve sociale",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Citation client",
+      "default": "« Nos soirées d'été ont changé de dimension. La terrasse est devenue la plus belle pièce de la maison. »"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "Auteur",
+      "default": "Camille R. — Aix-en-Provence"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Chiffre clé",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Valeur",
+          "default": "1 200+"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Libellé",
+          "default": "foyers éclairés"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Preuve sociale",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "1 200+", "label": "foyers éclairés" } },
+        { "type": "stat", "settings": { "value": "4,9 ★", "label": "note moyenne" } },
+        { "type": "stat", "settings": { "value": "2 ans", "label": "de garantie" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

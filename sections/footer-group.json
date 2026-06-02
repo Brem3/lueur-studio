@@ -1,0 +1,29 @@
+{
+  "type": "footer",
+  "name": "Pied de page",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "tagline": "L'éclairage qui transforme vos extérieurs en œuvres d'art.",
+        "tagline_short": "Conçu en France."
+      },
+      "blocks": {
+        "col-shop": {
+          "type": "menu_column",
+          "settings": { "title": "Boutique" }
+        },
+        "col-help": {
+          "type": "menu_column",
+          "settings": { "title": "Aide" }
+        },
+        "col-legal": {
+          "type": "menu_column",
+          "settings": { "title": "Légal" }
+        }
+      },
+      "block_order": ["col-shop", "col-help", "col-legal"]
+    }
+  },
+  "order": ["footer"]
+}

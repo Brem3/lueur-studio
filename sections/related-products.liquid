@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal"><h2 class="section__title">{{ section.settings.title }}</h2></div>
+    <div class="grid grid--4">
+      {%- assign shown = 0 -%}
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        {% for product in recommendations.products limit: 4 %}
+          {% render 'product-card', product: product %}
+          {%- assign shown = shown | plus: 1 -%}
+        {% endfor %}
+      {% else %}
+        {% for prod in collections.all.products limit: 4 %}
+          {% unless prod.id == product.id %}
+            {% render 'product-card', product: prod %}
+            {%- assign shown = shown | plus: 1 -%}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produits associés",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "À associer avec votre choix"
+    }
+  ],
+  "presets": [{ "name": "Produits associés" }]
+}
+{% endschema %}

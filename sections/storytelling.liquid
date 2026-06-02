@@ -1,0 +1,66 @@
+<section class="section">
+  <div class="container">
+    <div class="story {% if section.settings.reverse %}story--reverse{% endif %} reveal">
+      <div class="story__media lamp-glow">
+        {% render 'media', image: section.settings.image, label: shop.name, width: 1000, sizes: '(max-width: 860px) 100vw, 50vw' %}
+      </div>
+      <div class="story__content">
+        {% if section.settings.number != blank %}<span class="story__num">{{ section.settings.number }}</span>{% endif %}
+        <h2 class="story__title">{{ section.settings.title }}</h2>
+        <div class="story__body rte">{{ section.settings.body }}</div>
+        {% if section.settings.cta_label != blank %}
+          <a href="{{ section.settings.cta_url }}" class="btn-secondary" style="margin-top:1.5rem">{{ section.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Storytelling",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Inverser (image à droite)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "number",
+      "label": "Numéro décoratif",
+      "default": "01."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "La lumière comme architecture d'ambiance"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Texte",
+      "default": "<p>Chez Lueur Studio, nous ne fabriquons pas de simples lampes. Nous sculptons la lumière pour révéler vos extérieurs dès la tombée du soir — comme un hôtel particulier qui s'éveille à la nuit.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Texte du bouton",
+      "default": "Notre histoire"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Lien du bouton"
+    }
+  ],
+  "presets": [{ "name": "Storytelling" }]
+}
+{% endschema %}

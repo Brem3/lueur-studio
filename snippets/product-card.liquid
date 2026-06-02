@@ -1,0 +1,21 @@
+{% doc %}
+Renders a Lueur Studio product card (media, badge, title, price).
+@param {product} product - The product to render
+@example
+{% render 'product-card', product: product %}
+{% enddoc %}
+<a href="{{ product.url }}" class="product-card reveal">
+  <div class="product-card__media">
+    <div class="product-card__badge">{% render 'product-badge', product: product %}</div>
+    {% render 'media', image: product.featured_image, label: product.title, width: 800, sizes: '(max-width: 640px) 100vw, 33vw' %}
+  </div>
+  <div class="product-card__body">
+    <span class="product-card__title">{{ product.title }}</span>
+    <span class="product-card__price">
+      {%- if product.compare_at_price > product.price -%}
+        <span class="price--compare">{{ product.compare_at_price | money }}</span>
+      {%- endif -%}
+      <span class="price--current">{{ product.price | money }}</span>
+    </span>
+  </div>
+</a>

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Lueur Studio",
+    "theme_version": "1.0.0",
+    "theme_author": "Lueur Studio",
+    "theme_documentation_url": "https://lueurstudio.fr",
+    "theme_support_url": "https://lueurstudio.fr/pages/contact"
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Palette de marque"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_primary",
+        "label": "Fond principal",
+        "default": "#0D1B2A"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Or",
+        "default": "#C8A96E"
+      },
+      {
+        "type": "color",
+        "id": "color_amber",
+        "label": "Ambre (CTA)",
+        "default": "#E07B39"
+      },
+      {
+        "type": "color",
+        "id": "color_text_primary",
+        "label": "Texte principal",
+        "default": "#F0E8D8"
+      }
+    ]
+  },
+  {
+    "name": "Réassurance",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Messages globaux"
+      },
+      {
+        "type": "text",
+        "id": "usp_shipping",
+        "label": "Message livraison",
+        "default": "Livraison offerte dès 150€"
+      },
+      {
+        "type": "text",
+        "id": "usp_guarantee",
+        "label": "Message garantie",
+        "default": "Garantie fabricant 2 ans"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Seuil livraison offerte",
+        "default": "150€"
+      }
+    ]
+  },
+  {
+    "name": "Réseaux sociaux",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest",
+        "default": "https://pinterest.com"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook",
+        "default": "https://facebook.com"
+      }
+    ]
+  }
+]

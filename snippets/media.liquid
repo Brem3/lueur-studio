@@ -1,0 +1,27 @@
+{% doc %}
+Renders an image if present, otherwise a branded "visuel à venir" placeholder
+consistent with the Lueur Studio identity (dark bg + amber halo).
+@param {image} [image] - The image object to render (optional)
+@param {string} [label] - Placeholder label (e.g. product name) shown when no image
+@param {number} [width] - Render width for image_url (default 1200)
+@param {string} [sizes] - Responsive sizes attribute
+@param {string} [loading] - "lazy" (default) or "eager"
+@param {string} [class] - Extra CSS class on the <img>
+@example
+{% render 'media', image: product.featured_image, label: product.title, width: 1200 %}
+{% enddoc %}
+{%- liquid
+  assign w = width | default: 1200
+  assign load = loading | default: 'lazy'
+-%}
+{%- if image != blank -%}
+  {{ image | image_url: width: w | image_tag:
+      loading: load,
+      sizes: sizes,
+      widths: '400, 600, 800, 1000, 1200, 1500',
+      class: class }}
+{%- else -%}
+  <div class="lueur-placeholder {{ class }}">
+    <span class="lueur-placeholder__label">{{ label | default: shop.name }}<br>{{ 'general.placeholder' | t }}</span>
+  </div>
+{%- endif -%}

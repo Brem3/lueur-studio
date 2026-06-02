@@ -1,0 +1,28 @@
+{% doc %}
+Renders a row of gold stars plus an optional rating + review count line.
+@param {number} rating - Rating value out of 5 (default 5)
+@param {number} [count] - Number of reviews to display
+@param {boolean} [show_text] - Whether to show the "x/5 — n avis" text (default true)
+@example
+{% render 'star-rating', rating: 4.9, count: 87 %}
+{% enddoc %}
+{%- liquid
+  assign r = rating | default: 5 | round
+  if show_text == nil
+    assign show_text = true
+  endif
+-%}
+<span class="rating-line">
+  <span class="stars" role="img" aria-label="{{ rating | default: 5 }}/5">
+    {%- for i in (1..5) -%}
+      {%- if i <= r -%}
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 9.5l6.9-.6z"/></svg>
+      {%- else -%}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 9.5l6.9-.6z"/></svg>
+      {%- endif -%}
+    {%- endfor -%}
+  </span>
+  {%- if show_text -%}
+    <span>{{ rating | default: 5 }}/5{% if count %} — {{ 'product.reviews.count' | t: count: count }}{% endif %}</span>
+  {%- endif -%}
+</span>

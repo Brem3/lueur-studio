@@ -1,0 +1,60 @@
+<section class="usp-band">
+  <div class="container">
+    <div class="usp-band__grid">
+      {% for block in section.blocks %}
+        <div class="usp-item" {{ block.shopify_attributes }}>
+          {% render 'icon', name: block.settings.icon %}
+          <span class="usp-item__text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bande USP",
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "truck", "label": "Camion" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "check", "label": "Coche" },
+            { "value": "return", "label": "Retour" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "headset", "label": "Support" },
+            { "value": "globe", "label": "Globe" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison offerte +150€"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Bande USP",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "truck", "text": "Livraison offerte +150€" } },
+        { "type": "usp", "settings": { "icon": "shield", "text": "IP65 Certifié" } },
+        { "type": "usp", "settings": { "icon": "check", "text": "Garantie 2 ans" } },
+        { "type": "usp", "settings": { "icon": "return", "text": "Retours 30 jours" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,69 @@
+<section class="section section--secondary">
+  <div class="container">
+    <div class="product-description reveal">
+      {% if section.settings.headline != blank %}
+        <h2 class="product-description__headline">{{ section.settings.headline }}</h2>
+      {% endif %}
+
+      {% if section.settings.intro != blank %}
+        <p class="product-description__intro">{{ section.settings.intro }}</p>
+      {% elsif product.description != blank %}
+        <div class="product-description__intro rte">{{ product.description }}</div>
+      {% endif %}
+
+      {% if section.settings.benefits != blank %}
+        <h5>{{ 'product.description.benefits' | t }}</h5>
+        <ul class="benefits-list">{{ section.settings.benefits }}</ul>
+      {% endif %}
+
+      {% if section.settings.features != blank %}
+        <h5>{{ 'product.description.features' | t }}</h5>
+        <ul class="features-list">{{ section.settings.features }}</ul>
+      {% endif %}
+
+      {% if section.settings.feeling != blank %}
+        <p class="product-description__feeling">{{ section.settings.feeling }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Description produit",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Promesse principale (H2)",
+      "info": "Ce que le produit FAIT pour le client",
+      "default": "Transformez votre extérieur en salon de plein air, même après le coucher du soleil."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro émotionnelle",
+      "info": "Laissez vide pour utiliser la description du produit"
+    },
+    {
+      "type": "html",
+      "id": "benefits",
+      "label": "Bénéfices (liste <li>)",
+      "default": "<li>Une ambiance chaleureuse qui invite à rester dehors</li><li>Aucun câble, aucune installation</li><li>Résiste à la pluie, au gel et aux UV</li>"
+    },
+    {
+      "type": "html",
+      "id": "features",
+      "label": "Caractéristiques (liste <li>)",
+      "default": "<li>Certification IP67</li><li>Panneau solaire monocristallin haute efficacité</li><li>Autonomie 12h après 6h de charge</li><li>Finition laiton brossé anti-oxydation</li>"
+    },
+    {
+      "type": "textarea",
+      "id": "feeling",
+      "label": "Émotion finale",
+      "default": "C'est l'objet qui transforme un jardin ordinaire en un espace dont vous serez fier."
+    }
+  ],
+  "presets": [{ "name": "Description produit" }]
+}
+{% endschema %}

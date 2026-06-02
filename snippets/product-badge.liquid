@@ -1,0 +1,30 @@
+{% doc %}
+Renders a product badge derived from the product's tags (e.g. "BEST-SELLER", "NOUVEAUTÉ").
+Recognised tags: best-seller, nouveaute, populaire, edition-limitee, stock-limite.
+@param {product} product - The product to read tags from
+@example
+{% render 'product-badge', product: product %}
+{% enddoc %}
+{%- liquid
+  assign label = ''
+  assign style = ''
+  if product.tags contains 'best-seller'
+    assign label = 'product.badge.bestseller' | t
+    assign style = 'badge'
+  elsif product.tags contains 'nouveaute'
+    assign label = 'product.badge.new' | t
+    assign style = 'badge badge--amber'
+  elsif product.tags contains 'edition-limitee'
+    assign label = 'product.badge.limited' | t
+    assign style = 'badge badge--outline'
+  elsif product.tags contains 'populaire'
+    assign label = 'product.badge.popular' | t
+    assign style = 'badge'
+  elsif product.tags contains 'stock-limite'
+    assign label = 'product.badge.low_stock' | t
+    assign style = 'badge badge--amber'
+  endif
+-%}
+{%- if label != blank -%}
+  <span class="{{ style }}">{{ label }}</span>
+{%- endif -%}

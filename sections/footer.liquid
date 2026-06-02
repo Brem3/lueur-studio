@@ -1,0 +1,81 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">{{ shop.name }}</div>
+        <p class="footer__tagline">{{ section.settings.tagline }}</p>
+        <div class="footer__social">
+          {% if settings.social_instagram != blank %}
+            <a href="{{ settings.social_instagram }}" aria-label="Instagram">{% render 'icon', name: 'instagram' %}</a>
+          {% endif %}
+          {% if settings.social_pinterest != blank %}
+            <a href="{{ settings.social_pinterest }}" aria-label="Pinterest">{% render 'icon', name: 'pinterest' %}</a>
+          {% endif %}
+          {% if settings.social_facebook != blank %}
+            <a href="{{ settings.social_facebook }}" aria-label="Facebook">{% render 'icon', name: 'facebook' %}</a>
+          {% endif %}
+        </div>
+      </div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'menu_column' %}
+          <div {{ block.shopify_attributes }}>
+            <div class="footer__col-title">{{ block.settings.title }}</div>
+            <ul class="footer__links">
+              {% if block.settings.menu != blank %}
+                {% for link in block.settings.menu.links %}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'footer.rights' | t }}</span>
+      <span>{{ section.settings.tagline_short }}</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "L'éclairage qui transforme vos extérieurs en œuvres d'art."
+    },
+    {
+      "type": "text",
+      "id": "tagline_short",
+      "label": "Mention courte",
+      "default": "Conçu en France."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_column",
+      "name": "Colonne de liens",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Boutique"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

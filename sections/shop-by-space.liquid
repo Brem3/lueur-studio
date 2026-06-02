@@ -1,0 +1,84 @@
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section__head reveal">
+      {% if section.settings.eyebrow != blank %}<span class="section__eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      <h2 class="section__title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="grid grid--3">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.link }}" class="space-tile reveal" {{ block.shopify_attributes }}>
+          <div class="space-tile__media">
+            {% render 'media', image: block.settings.image, label: block.settings.name, width: 800, sizes: '(max-width: 640px) 100vw, 33vw' %}
+          </div>
+          <div class="space-tile__overlay"></div>
+          <div class="space-tile__caption">
+            <div class="space-tile__name">{{ block.settings.name }}</div>
+            <span class="space-tile__link">{{ block.settings.link_label }} {% render 'icon', name: 'chevron-right' %}</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Acheter par espace",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Par usage"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Trouvez la lumière pour chaque espace"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "space",
+      "name": "Espace",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom",
+          "default": "Terrasse"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Texte du lien",
+          "default": "Découvrir"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Acheter par espace",
+      "blocks": [
+        { "type": "space", "settings": { "name": "Terrasse", "link_label": "Découvrir" } },
+        { "type": "space", "settings": { "name": "Jardin", "link_label": "Découvrir" } },
+        { "type": "space", "settings": { "name": "Allée & Entrée", "link_label": "Découvrir" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

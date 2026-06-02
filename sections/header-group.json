@@ -1,0 +1,29 @@
+{
+  "type": "header",
+  "name": "En-tête",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "guide_url": "/pages/guide-achat",
+        "blog_url": "/blogs/inspirations"
+      },
+      "blocks": {
+        "col-terrasse": {
+          "type": "mega_column",
+          "settings": { "title": "Terrasse", "link": "/collections/terrasse" }
+        },
+        "col-jardin": {
+          "type": "mega_column",
+          "settings": { "title": "Jardin", "link": "/collections/jardin" }
+        },
+        "col-allees": {
+          "type": "mega_column",
+          "settings": { "title": "Allées", "link": "/collections/allees" }
+        }
+      },
+      "block_order": ["col-terrasse", "col-jardin", "col-allees"]
+    }
+  },
+  "order": ["header"]
+}

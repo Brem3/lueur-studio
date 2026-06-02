@@ -1,0 +1,92 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <nav class="site-header__nav site-header__nav--left" aria-label="{{ 'accessibility.nav_primary' | t }}">
+      <button class="header-toggle" data-menu-toggle aria-expanded="false" aria-label="{{ 'accessibility.menu' | t }}">
+        {% render 'icon', name: 'menu' %}
+      </button>
+      <div class="has-mega">
+        <a href="{{ routes.all_products_collection_url }}" class="nav-link">
+          {{ 'header.collections' | t }} {% render 'icon', name: 'chevron-down' %}
+        </a>
+        <div class="mega-menu">
+          <div class="container">
+            <div class="mega-menu__grid">
+              {% for block in section.blocks %}
+                {% if block.type == 'mega_column' %}
+                  <a href="{{ block.settings.link }}" class="mega-card" {{ block.shopify_attributes }}>
+                    <div class="mega-card__media">
+                      {% render 'media', image: block.settings.image, label: block.settings.title, width: 600 %}
+                    </div>
+                    <span class="mega-card__title">{{ block.settings.title }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="mega-menu__links">
+              <a href="{{ routes.all_products_collection_url }}">{{ 'header.all_collection' | t }}</a>
+              <a href="{{ routes.all_products_collection_url }}?sort_by=created-descending">{{ 'header.new' | t }}</a>
+              <a href="{{ routes.all_products_collection_url }}?sort_by=best-selling">{{ 'header.bestsellers' | t }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="{{ section.settings.guide_url }}" class="nav-link">{{ 'header.buying_guide' | t }}</a>
+      <a href="{{ section.settings.blog_url }}" class="nav-link">{{ 'header.inspirations' | t }}</a>
+    </nav>
+
+    <a href="{{ routes.root_url }}" class="site-header__logo">{{ shop.name }}</a>
+
+    <nav class="site-header__nav site-header__nav--right" aria-label="{{ 'accessibility.nav_utility' | t }}">
+      <a href="{{ routes.search_url }}" class="header-icon" aria-label="{{ 'header.search' | t }}">{% render 'icon', name: 'search' %}</a>
+      <a href="{{ routes.account_url }}" class="header-icon" aria-label="{{ 'header.account' | t }}">{% render 'icon', name: 'user' %}</a>
+      <a href="{{ routes.cart_url }}" class="header-icon" aria-label="{{ 'header.cart' | t }}">
+        {% render 'icon', name: 'cart' %}<span class="cart-count">{{ cart.item_count }}</span>
+      </a>
+    </nav>
+  </div>
+
+  <details data-mobile-drawer class="visually-hidden"></details>
+</header>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    {
+      "type": "url",
+      "id": "guide_url",
+      "label": "Lien Guide d'achat"
+    },
+    {
+      "type": "url",
+      "id": "blog_url",
+      "label": "Lien Inspirations"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_column",
+      "name": "Colonne mega-menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Terrasse"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

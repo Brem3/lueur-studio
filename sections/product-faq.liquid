@@ -1,0 +1,63 @@
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section__head reveal"><h2 class="section__title">{{ section.settings.title }}</h2></div>
+    <div class="faq reveal">
+      {% for block in section.blocks %}
+        <details {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <div class="faq__answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {% endfor %}
+    </div>
+    {% if section.settings.link_label != blank %}
+      <div class="section__head" style="margin-top:2.5rem;margin-bottom:0">
+        <a href="{{ section.settings.link_url }}" class="btn-secondary">{{ section.settings.link_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ produit",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Questions fréquentes"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Texte du lien",
+      "default": "Voir toutes les questions"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Ce luminaire est-il adapté à l'extérieur ?" },
+        { "type": "richtext", "id": "answer", "label": "Réponse", "default": "<p>Oui, tous nos luminaires sont certifiés IP65 minimum et conçus pour résister aux intempéries.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ produit",
+      "blocks": [
+        { "type": "qa" },
+        { "type": "qa", "settings": { "question": "Dois-je faire appel à un électricien ?", "answer": "<p>Cela dépend du modèle : nos lampes solaires et rechargeables ne nécessitent aucun câblage.</p>" } },
+        { "type": "qa", "settings": { "question": "Comment entretenir la finition ?", "answer": "<p>Un simple chiffon doux et sec suffit. Évitez les produits abrasifs.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
