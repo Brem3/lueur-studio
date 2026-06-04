@@ -54,6 +54,8 @@
           btn.setAttribute('aria-checked', 'true');
           var input = group.querySelector('input[type="hidden"]');
           if (input) input.value = btn.getAttribute('data-option-value');
+          var current = group.querySelector('[data-option-current]');
+          if (current) current.textContent = btn.getAttribute('data-option-value');
           updateVariant(form);
         });
       });
@@ -102,11 +104,23 @@
     });
   }
 
+  /* ---- Reviews carousel: clone cards for seamless infinite loop ---- */
+  function initReviewCarousel() {
+    var track = document.querySelector('[data-review-track]');
+    if (!track) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var cards = Array.prototype.slice.call(track.children);
+    cards.forEach(function (card) {
+      track.appendChild(card.cloneNode(true));
+    });
+  }
+
   function init() {
     initReveal();
     initGallery();
     initVariants();
     initMobileMenu();
+    initReviewCarousel();
   }
 
   if (document.readyState === 'loading') {

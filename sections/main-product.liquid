@@ -3,9 +3,10 @@
   <div class="container">
     <div class="product">
       <div class="product__gallery" data-gallery>
+        {%- assign main_image = current_variant.featured_media.preview_image | default: product.featured_image -%}
         <div class="product__gallery-main lamp-glow" data-gallery-main>
-          {% if product.featured_media %}
-            {{ product.featured_media | image_url: width: 1200 | image_tag: loading: 'eager', sizes: '(max-width: 860px) 100vw, 55vw', widths: '600, 900, 1200, 1500' }}
+          {% if main_image %}
+            {{ main_image | image_url: width: 1200 | image_tag: loading: 'eager', sizes: '(max-width: 860px) 100vw, 55vw', widths: '600, 900, 1200, 1500' }}
           {% else %}
             {% render 'media', label: product.title, width: 1200, loading: 'eager' %}
           {% endif %}
@@ -67,11 +68,11 @@
             {% for option in product.options_with_values %}
               {%- assign is_color = false -%}
               {%- assign oname = option.name | downcase -%}
-              {%- if oname contains 'finition' or oname contains 'couleur' or oname contains 'color' -%}{%- assign is_color = true -%}{%- endif -%}
+              {%- if oname contains 'couleur' or oname contains 'finition' or oname contains 'color' -%}{%- assign is_color = true -%}{%- endif -%}
               <div class="product__option" data-option-group>
-                <span class="product__option-label">{{ option.name }}</span>
+                <span class="product__option-label">{{ option.name }} : <strong class="product__option-current" data-option-current>{{ option.selected_value }}</strong></span>
                 <input type="hidden" value="{{ option.selected_value }}">
-                <div class="{% if is_color %}swatch-group{% else %}swatch-group{% endif %}" role="radiogroup" aria-label="{{ option.name }}">
+                <div class="{% if is_color %}swatch-group{% else %}variant-group{% endif %}" role="radiogroup" aria-label="{{ option.name }}">
                   {% for value in option.values %}
                     {%- assign checked = false -%}
                     {%- if value == option.selected_value -%}{%- assign checked = true -%}{%- endif -%}
@@ -83,7 +84,8 @@
                         role="radio"
                         aria-checked="{{ checked }}"
                         title="{{ value }}"
-                        style="background:{% render 'swatch-color', value: value %}"></button>
+                        aria-label="{{ value }}"
+                        style="--swatch:{% render 'swatch-color', value: value %}"><span class="swatch__dot"></span><span class="swatch__label">{{ value }}</span></button>
                     {% else %}
                       <button
                         type="button"

@@ -51,7 +51,7 @@
     "delivery_estimate": "Expédié sous 24–48h — Livraison estimée sous 3 jours",
     "guarantee_line": "Satisfait ou remboursé sous 15 jours",
     "usp": {
-      "shipping": "Livraison offerte en France métropolitaine",
+      "shipping": "Livraison offerte dès 100€ d'achat",
       "returns": "Retours gratuits sous 15 jours"
     },
     "description": {
@@ -60,7 +60,7 @@
     },
     "info": {
       "shipping_title": "Livraison",
-      "shipping_standard": "Standard : 3–5 jours ouvrés — offerte dès 150€",
+      "shipping_standard": "Standard : 3–5 jours ouvrés — offerte dès 100€",
       "shipping_express": "Express : 24–48h — 9,90€",
       "shipping_europe": "Europe : 5–8 jours — dès 14,90€",
       "shipping_details": "Détails de livraison",

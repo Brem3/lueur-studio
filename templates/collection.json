@@ -1,14 +1,6 @@
 {
   "sections": {
-    "main": { "type": "main-collection" },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "eyebrow": "Lettre Lueur",
-        "title": "Recevez nos idées d'aménagement",
-        "body": "Inspirations, conseils d'éclairage et offres en avant-première."
-      }
-    }
+    "main": { "type": "main-collection" }
   },
-  "order": ["main", "newsletter"]
+  "order": ["main"]
 }

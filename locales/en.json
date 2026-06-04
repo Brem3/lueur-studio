@@ -1,111 +1,111 @@
 {
   "general": {
     "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
+      "tags": "Étiquetés « {{ tags }} »",
       "page": "Page {{ page }}"
     },
-    "placeholder": "Image coming soon",
-    "coming_soon": "Coming soon",
-    "scroll": "Scroll"
+    "placeholder": "Visuel à venir",
+    "coming_soon": "Bientôt disponible",
+    "scroll": "Faire défiler"
   },
   "accessibility": {
-    "skip_to_content": "Skip to content",
-    "nav_primary": "Primary navigation",
-    "nav_utility": "Utility navigation",
+    "skip_to_content": "Aller au contenu",
+    "nav_primary": "Navigation principale",
+    "nav_utility": "Navigation utilitaire",
     "menu": "Menu"
   },
   "header": {
     "collections": "Collections",
-    "buying_guide": "Garden & Paths",
-    "inspirations": "Terrace",
-    "all_collection": "Shop all",
-    "new": "New arrivals",
+    "buying_guide": "Jardin & Allées",
+    "inspirations": "Terrasse",
+    "all_collection": "Toute la collection",
+    "new": "Nouveautés",
     "bestsellers": "Best-sellers",
-    "search": "Search",
-    "account": "Account",
-    "cart": "Cart"
+    "search": "Rechercher",
+    "account": "Compte",
+    "cart": "Panier"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "Tous droits réservés."
   },
   "product": {
     "badge": {
       "bestseller": "Best-seller",
-      "new": "New",
-      "limited": "Limited edition",
-      "popular": "Popular",
-      "low_stock": "Low stock"
+      "new": "Nouveauté",
+      "limited": "Édition limitée",
+      "popular": "Populaire",
+      "low_stock": "Stock limité"
     },
     "reviews": {
-      "eyebrow": "Verified reviews",
-      "count": "{{ count }} reviews",
-      "judgeme_note": "Reviews collected via Judge.me. Connect the app to display your verified reviews."
+      "eyebrow": "Avis vérifiés",
+      "count": "{{ count }} avis",
+      "judgeme_note": "Avis collectés via Judge.me. Connectez l'application pour afficher vos avis vérifiés."
     },
     "gallery": {
-      "view": "View image {{ index }}"
+      "view": "Voir le visuel {{ index }}"
     },
-    "klarna": "From {{ amount }}/mo in 3 interest-free payments",
-    "quantity": "Quantity",
-    "add_to_cart": "Add to cart",
-    "sold_out": "Sold out",
-    "delivery_estimate": "Ships in 24–48h — Estimated delivery within 3 days",
-    "guarantee_line": "15-day money-back guarantee",
+    "klarna": "À partir de {{ amount }}/mois en 3x sans frais",
+    "quantity": "Quantité",
+    "add_to_cart": "Ajouter au panier",
+    "sold_out": "Épuisé",
+    "delivery_estimate": "Expédié sous 24–48h — Livraison estimée sous 3 jours",
+    "guarantee_line": "Satisfait ou remboursé sous 15 jours",
     "usp": {
-      "shipping": "Free shipping within mainland France",
-      "returns": "Free returns within 15 days"
+      "shipping": "Livraison offerte dès 100€ d'achat",
+      "returns": "Retours gratuits sous 15 jours"
     },
     "description": {
-      "benefits": "Why you'll love it",
-      "features": "What makes it unique"
+      "benefits": "Pourquoi vous allez l'adorer",
+      "features": "Ce qui la rend unique"
     },
     "info": {
-      "shipping_title": "Shipping",
-      "shipping_standard": "Standard: 3–5 business days — free over €150",
-      "shipping_express": "Express: 24–48h — €9.90",
-      "shipping_europe": "Europe: 5–8 days — from €14.90",
-      "shipping_details": "Shipping details",
-      "returns_title": "Returns",
-      "returns_30": "Returns within 15 days, original packaging",
+      "shipping_title": "Livraison",
+      "shipping_standard": "Standard : 3–5 jours ouvrés — offerte dès 100€",
+      "shipping_express": "Express : 24–48h — 9,90€",
+      "shipping_europe": "Europe : 5–8 jours — dès 14,90€",
+      "shipping_details": "Détails de livraison",
+      "returns_title": "Retours",
+      "returns_30": "Retours sous 15 jours, emballage d'origine",
       "warranty_2y": "",
-      "returns_details": "Returns policy",
-      "support_title": "Support",
-      "support_chat": "Chat advice 7 days a week",
-      "support_french": "French craftsmanship & service",
-      "contact": "Contact us"
+      "returns_details": "Politique de retours",
+      "support_title": "Accompagnement",
+      "support_chat": "Conseil par chat 7j/7",
+      "support_french": "Service à la française",
+      "contact": "Nous contacter"
     }
   },
   "collection": {
-    "count": "{{ count }} products",
-    "empty": "No products in this collection yet."
+    "count": "{{ count }} produits",
+    "empty": "Aucun produit dans cette collection pour le moment."
   },
   "blog": {
     "eyebrow": "Inspirations",
-    "back": "Back to articles"
+    "back": "Retour aux articles"
   },
   "cart": {
-    "title": "Your cart",
-    "update": "Update",
-    "subtotal": "Subtotal",
-    "checkout": "Checkout",
-    "empty": "Your cart is empty.",
-    "continue": "Continue shopping"
+    "title": "Votre panier",
+    "update": "Mettre à jour",
+    "subtotal": "Sous-total",
+    "checkout": "Passer commande",
+    "empty": "Votre panier est vide.",
+    "continue": "Continuer mes achats"
   },
   "search": {
-    "title": "Search",
-    "placeholder": "Search for a light…",
-    "results": "{{ count }} results for \"{{ terms }}\"",
-    "no_results": "No results for \"{{ terms }}\"."
+    "title": "Recherche",
+    "placeholder": "Rechercher un luminaire…",
+    "results": "{{ count }} résultats pour « {{ terms }} »",
+    "no_results": "Aucun résultat pour « {{ terms }} »."
   },
   "newsletter": {
-    "email": "Email address",
-    "placeholder": "Your email address",
-    "submit": "Subscribe",
-    "success": "Thank you! Your subscription is confirmed."
+    "email": "Adresse e-mail",
+    "placeholder": "Votre adresse e-mail",
+    "submit": "S'inscrire",
+    "success": "Merci ! Votre inscription est confirmée."
   },
   "error_404": {
-    "code": "Error 404",
-    "title": "This page went dark",
-    "body": "The page you're looking for doesn't exist or has moved. Let's get you back to the light.",
-    "home": "Back to home"
+    "code": "Erreur 404",
+    "title": "Cette page s'est éteinte",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée. Revenons vers la lumière.",
+    "home": "Retour à l'accueil"
   }
 }

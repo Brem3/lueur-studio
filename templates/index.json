@@ -81,44 +81,6 @@
         "cta_url": ""
       }
     },
-    "spaces": {
-      "type": "shop-by-space",
-      "blocks": {
-        "s1": {
-          "type": "space",
-          "settings": {
-            "name": "Jardin & Allées",
-            "link_label": "Découvrir",
-            "link": "/collections/jardin-allees"
-          }
-        },
-        "s2": {
-          "type": "space",
-          "settings": {
-            "name": "Terrasse & Ambiance",
-            "link_label": "Découvrir",
-            "link": "/collections/terrasse-ambiance"
-          }
-        },
-        "s3": {
-          "type": "space",
-          "settings": {
-            "name": "Best-sellers",
-            "link_label": "Découvrir",
-            "link": "/collections/best-sellers"
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
-      "settings": {
-        "eyebrow": "Par usage",
-        "title": "Trouvez la lumière pour chaque espace"
-      }
-    },
     "social": {
       "type": "social-proof",
       "blocks": {
@@ -170,7 +132,6 @@
     "usp",
     "bestsellers",
     "story",
-    "spaces",
     "social",
     "guide"
   ]

@@ -1,26 +1,28 @@
 {% doc %}
-Maps a finish/colour option value to a CSS colour for swatch backgrounds.
-Falls back to a neutral gold if unknown.
-@param {string} value - The option value (e.g. "Noir Mat", "Laiton Brossé")
+Maps a colour/finish option value to a CSS colour for swatch backgrounds.
+Handles French and English lighting terms. Falls back to warm gold if unknown.
+@param {string} value - The option value (e.g. "Warm light", "White-2LED", "Multicolor")
 @example
-{% render 'swatch-color', value: 'Laiton Brossé' %}
+{% render 'swatch-color', value: 'Warm light 6LED' %}
 {% enddoc %}
 {%- liquid
   assign v = value | downcase
-  if v contains 'noir'
+  if v contains 'multicolor' or v contains 'multicolore' or v contains 'rgb'
+    echo 'linear-gradient(135deg,#E0533A,#C8A96E,#4A9B6F,#3A6EA5)'
+  elsif v contains 'warm' or v contains 'chaud' or v contains 'orange'
+    echo '#E8B45A'
+  elsif v contains 'white' or v contains 'blanc'
+    echo '#F4EFE2'
+  elsif v contains 'noir' or v contains 'black'
     echo '#1A1A1A'
-  elsif v contains 'laiton' or v contains 'doré' or v contains 'dore'
+  elsif v contains 'laiton' or v contains 'doré' or v contains 'dore' or v contains 'gold'
     echo '#C8A96E'
   elsif v contains 'anthracite'
     echo '#3A3A3A'
   elsif v contains 'sable'
     echo '#C4AA87'
-  elsif v contains 'minuit'
-    echo '#1C1C2E'
   elsif v contains 'terracotta'
     echo '#B85C3A'
-  elsif v contains 'blanc'
-    echo '#F0E8D8'
   else
     echo '#C8A96E'
   endif
