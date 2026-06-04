@@ -5,24 +5,24 @@
     "header": {
       "type": "header",
       "settings": {
-        "guide_url": "/pages/guide-achat",
-        "blog_url": "/blogs/inspirations"
+        "guide_url": "/collections/jardin-allees",
+        "blog_url": "/collections/terrasse-ambiance"
       },
       "blocks": {
-        "col-terrasse": {
-          "type": "mega_column",
-          "settings": { "title": "Terrasse", "link": "/collections/terrasse" }
-        },
         "col-jardin": {
           "type": "mega_column",
-          "settings": { "title": "Jardin", "link": "/collections/jardin" }
+          "settings": { "title": "Jardin & Allées", "link": "/collections/jardin-allees" }
         },
-        "col-allees": {
+        "col-terrasse": {
           "type": "mega_column",
-          "settings": { "title": "Allées", "link": "/collections/allees" }
+          "settings": { "title": "Terrasse & Ambiance", "link": "/collections/terrasse-ambiance" }
+        },
+        "col-best": {
+          "type": "mega_column",
+          "settings": { "title": "Best-sellers", "link": "/collections/best-sellers" }
         }
       },
-      "block_order": ["col-terrasse", "col-jardin", "col-allees"]
+      "block_order": ["col-jardin", "col-terrasse", "col-best"]
     }
   },
   "order": ["header"]

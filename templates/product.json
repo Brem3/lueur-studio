@@ -8,7 +8,7 @@
       "type": "usp-band",
       "blocks": {
         "u1": { "type": "usp", "settings": { "icon": "headset", "text": "Service client 7j/7" } },
-        "u2": { "type": "usp", "settings": { "icon": "leaf", "text": "Design français" } },
+        "u2": { "type": "usp", "settings": { "icon": "leaf", "text": "Conçu pour l'extérieur" } },
         "u3": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison en 3 jours" } },
         "u4": { "type": "usp", "settings": { "icon": "return", "text": "Retours 15 jours" } }
       },
@@ -17,64 +17,53 @@
     "description": {
       "type": "product-description",
       "settings": {
-        "headline": "Transformez votre extérieur en salon de plein air, même après le coucher du soleil.",
-        "benefits": "<li>Une ambiance chaleureuse qui invite à rester dehors</li><li>Aucun câble, aucune installation</li><li>Résiste à la pluie, au gel et aux UV</li>",
-        "features": "<li>Certification IP67</li><li>Panneau solaire monocristallin haute efficacité</li><li>Autonomie 12h après 6h de charge</li><li>Finition laiton brossé anti-oxydation</li>",
-        "feeling": "C'est l'objet qui transforme un jardin ordinaire en un espace dont vous serez fier d'ouvrir les portes à vos invités."
+        "headline": "Révélez vos extérieurs dès la tombée du soir.",
+        "intro": "",
+        "benefits": "<li>Une ambiance chaleureuse qui invite à rester dehors</li><li>Installation simple, sans travaux</li><li>Pensé pour résister à la pluie, au gel et aux UV</li>",
+        "features": "<li>Éclairage LED basse consommation, lumière chaude</li><li>Conçu pour un usage extérieur (étanchéité IP)</li><li>Autonomie solaire ou recharge USB selon le modèle</li><li>Design sobre qui se fond dans tous les extérieurs</li>",
+        "feeling": "L'objet qui transforme un extérieur ordinaire en un espace dont vous serez fier d'ouvrir les portes à vos invités."
       }
     },
     "reviews": {
       "type": "product-reviews",
       "settings": {
         "title": "Ce qu'en disent nos clients",
-        "featured_quote": "Je ne pensais pas qu'une lampe pouvait changer à ce point l'atmosphère d'un jardin."
+        "featured_quote": "Je ne pensais pas qu'un simple luminaire pouvait changer à ce point l'atmosphère de mon extérieur."
       },
       "blocks": {
-        "r1": { "type": "review", "settings": { "author": "Sophie L.", "date": "Mai 2025", "rating": 5, "body": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse." } },
-        "r2": { "type": "review", "settings": { "author": "Marc D.", "date": "Avril 2025", "rating": 5, "body": "Installation en 5 minutes, aucune mauvaise surprise. La finition laiton est superbe." } },
-        "r3": { "type": "review", "settings": { "author": "Inès B.", "date": "Mars 2025", "rating": 5, "body": "Résiste parfaitement à la pluie depuis 3 mois. Je recommande sans hésiter." } },
-        "r4": { "type": "review", "settings": { "author": "Thomas V.", "date": "Mars 2025", "rating": 4, "body": "Un vrai objet de décoration, même éteint. Service client réactif." } }
+        "r1": { "type": "review", "settings": { "author": "Sophie L.", "date": "Mai 2026", "rating": 5, "body": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse." } },
+        "r2": { "type": "review", "settings": { "author": "Marc D.", "date": "Avril 2026", "rating": 5, "body": "Installation en quelques minutes, aucune mauvaise surprise. Très satisfait." } },
+        "r3": { "type": "review", "settings": { "author": "Inès B.", "date": "Mars 2026", "rating": 5, "body": "Résiste parfaitement à la pluie depuis plusieurs semaines. Je recommande sans hésiter." } },
+        "r4": { "type": "review", "settings": { "author": "Thomas V.", "date": "Mars 2026", "rating": 4, "body": "Un vrai plus pour l'ambiance du jardin. Service client réactif." } }
       },
       "block_order": ["r1", "r2", "r3", "r4"]
-    },
-    "specs": {
-      "type": "product-specs",
-      "settings": { "title": "Fiche technique" },
-      "blocks": {
-        "sp1": { "type": "spec", "settings": { "label": "Dimensions", "value": "H 45 cm × Ø 12 cm" } },
-        "sp2": { "type": "spec", "settings": { "label": "Matériaux", "value": "Aluminium moulé, verre trempé" } },
-        "sp3": { "type": "spec", "settings": { "label": "Indice de protection", "value": "IP67" } },
-        "sp4": { "type": "spec", "settings": { "label": "Source lumineuse", "value": "LED 4W, 3000K (blanc chaud)" } },
-        "sp5": { "type": "spec", "settings": { "label": "Autonomie", "value": "8 à 12h selon luminosité" } }
-      },
-      "block_order": ["sp1", "sp2", "sp3", "sp4", "sp5"]
     },
     "info": {
       "type": "product-info",
       "settings": {
-        "shipping_url": "/pages/livraison",
-        "returns_url": "/pages/retours",
-        "contact_url": "/pages/contact"
+        "shipping_url": "/collections/best-sellers",
+        "returns_url": "/collections/best-sellers",
+        "contact_url": "/collections/best-sellers"
       }
     },
     "faq": {
       "type": "product-faq",
       "settings": {
         "title": "Questions fréquentes",
-        "link_label": "Voir toutes les questions",
-        "link_url": "/pages/faq"
+        "link_label": "",
+        "link_url": ""
       },
       "blocks": {
-        "q1": { "type": "qa", "settings": { "question": "Ce luminaire est-il vraiment adapté à l'extérieur ?", "answer": "<p>Oui, tous nos luminaires sont certifiés IP65 minimum et conçus pour résister durablement aux intempéries.</p>" } },
-        "q2": { "type": "qa", "settings": { "question": "Dois-je faire appel à un électricien ?", "answer": "<p>Nos modèles solaires et rechargeables ne nécessitent aucun câblage. Les appliques filaires demandent une installation électrique standard.</p>" } },
-        "q3": { "type": "qa", "settings": { "question": "Comment entretenir la finition laiton brossé ?", "answer": "<p>Un chiffon doux et sec suffit. Évitez les produits abrasifs qui altéreraient le traitement anti-oxydation.</p>" } }
+        "q1": { "type": "qa", "settings": { "question": "Ce luminaire est-il vraiment adapté à l'extérieur ?", "answer": "<p>Oui, nos luminaires d'extérieur sont conçus avec une protection contre l'humidité et la poussière pour résister durablement aux intempéries.</p>" } },
+        "q2": { "type": "qa", "settings": { "question": "Dois-je faire appel à un électricien ?", "answer": "<p>Nos modèles solaires et rechargeables ne nécessitent aucun câblage : ils fonctionnent dès le déballage.</p>" } },
+        "q3": { "type": "qa", "settings": { "question": "Quelle est l'autonomie ?", "answer": "<p>Cela dépend du modèle et de l'ensoleillement. Reportez-vous à la description du produit pour les détails d'autonomie et de charge.</p>" } }
       },
       "block_order": ["q1", "q2", "q3"]
     },
     "related": {
       "type": "related-products",
-      "settings": { "title": "À associer avec votre choix" }
+      "settings": { "title": "Vous aimerez aussi" }
     }
   },
-  "order": ["main", "usp", "description", "reviews", "specs", "info", "faq", "related"]
+  "order": ["main", "usp", "description", "reviews", "info", "faq", "related"]
 }

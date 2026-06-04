@@ -16,7 +16,7 @@
         "title": "Révélez vos extérieurs après le coucher du soleil.",
         "subtitle": "Des luminaires d'auteur qui transforment terrasses, jardins et allées en espaces habités, poétiques et premium.",
         "cta_label": "Découvrir la collection",
-        "cta_url": "/collections/all"
+        "cta_url": "/collections/best-sellers"
       }
     },
     "usp": {
@@ -64,10 +64,10 @@
       "settings": {
         "eyebrow": "Sélection",
         "title": "Nos pièces signature",
-        "collection": "",
-        "limit": 3,
+        "collection": "best-sellers",
+        "limit": 6,
         "cta_label": "Voir toute la collection",
-        "cta_url": "/collections/all"
+        "cta_url": "/collections/best-sellers"
       }
     },
     "story": {
@@ -77,8 +77,8 @@
         "number": "",
         "title": "La lumière comme architecture d'ambiance",
         "body": "<p>Chez Lueur Studio, nous ne fabriquons pas de simples lampes. Nous sculptons la lumière pour révéler vos extérieurs dès la tombée du soir — comme un hôtel particulier qui s'éveille à la nuit.</p>",
-        "cta_label": "Notre histoire",
-        "cta_url": "/pages/a-propos"
+        "cta_label": "",
+        "cta_url": ""
       }
     },
     "spaces": {
@@ -87,25 +87,25 @@
         "s1": {
           "type": "space",
           "settings": {
-            "name": "Terrasse",
+            "name": "Jardin & Allées",
             "link_label": "Découvrir",
-            "link": "/collections/terrasse"
+            "link": "/collections/jardin-allees"
           }
         },
         "s2": {
           "type": "space",
           "settings": {
-            "name": "Jardin",
+            "name": "Terrasse & Ambiance",
             "link_label": "Découvrir",
-            "link": "/collections/jardin"
+            "link": "/collections/terrasse-ambiance"
           }
         },
         "s3": {
           "type": "space",
           "settings": {
-            "name": "Allée & Entrée",
+            "name": "Best-sellers",
             "link_label": "Découvrir",
-            "link": "/collections/allees"
+            "link": "/collections/best-sellers"
           }
         }
       },
@@ -161,15 +161,7 @@
         "title": "Quelle lumière pour quel extérieur ?",
         "body": "Solaire ou filaire, IP65 ou IP67, applique ou borne… Notre guide vous aide à choisir le luminaire parfait pour chaque espace, sans vous tromper.",
         "cta_label": "Lire le guide d'achat",
-        "cta_url": "/pages/guide-achat"
-      }
-    },
-    "blog": {
-      "type": "blog-highlights",
-      "settings": {
-        "eyebrow": "Inspirations",
-        "title": "Idées d'aménagement",
-        "blog": "inspirations"
+        "cta_url": "/collections/best-sellers"
       }
     }
   },
@@ -180,7 +172,6 @@
     "story",
     "spaces",
     "social",
-    "guide",
-    "blog"
+    "guide"
   ]
 }
