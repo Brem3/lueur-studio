@@ -1,0 +1,60 @@
+<section class="trust-marquee" aria-label="{{ 'accessibility.trust' | t }}">
+  <div class="trust-marquee__track" data-marquee-track>
+    {%- for block in section.blocks -%}
+      <span class="trust-marquee__item" {{ block.shopify_attributes }}>
+        {% render 'icon', name: block.settings.icon %}
+        {{ block.settings.text }}
+      </span>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bande réassurance",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Argument",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "truck", "label": "Camion" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "return", "label": "Retour" },
+            { "value": "headset", "label": "Support" },
+            { "value": "check", "label": "Coche" },
+            { "value": "globe", "label": "Globe" },
+            { "value": "sparkle", "label": "Étoile" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Design français"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bande réassurance",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "text": "Livraison offerte dès 150€" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "Certifié IP65" } },
+        { "type": "item", "settings": { "icon": "bolt", "text": "Paiement en 3× sans frais" } },
+        { "type": "item", "settings": { "icon": "leaf", "text": "Design français" } },
+        { "type": "item", "settings": { "icon": "return", "text": "Satisfait ou remboursé 15 jours" } },
+        { "type": "item", "settings": { "icon": "headset", "text": "Conseil expert" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

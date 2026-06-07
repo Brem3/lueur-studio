@@ -1,7 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "En-tête",
   "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "mode": "static",
+        "sticky": false,
+        "message": "<p>Livraison offerte dès 150€ en France métropolitaine</p>"
+      },
+      "blocks": {
+        "a1": { "type": "item", "settings": { "icon": "truck", "text": "Livraison offerte dès 150€" } },
+        "a2": { "type": "item", "settings": { "icon": "shield", "text": "Garantie 2 ans" } },
+        "a3": { "type": "item", "settings": { "icon": "return", "text": "Retours sous 15 jours" } },
+        "a4": { "type": "item", "settings": { "icon": "bolt", "text": "Paiement en 3× sans frais" } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"]
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -11,19 +35,19 @@
       "blocks": {
         "col-jardin": {
           "type": "mega_column",
-          "settings": { "title": "Jardin & Allées", "link": "/collections/jardin-allees" }
+          "settings": { "title": "Jardin & Allées", "description": "Bornes et spots pour sublimer vos extérieurs", "icon": "leaf", "link": "/collections/jardin-allees" }
         },
         "col-terrasse": {
           "type": "mega_column",
-          "settings": { "title": "Terrasse & Ambiance", "link": "/collections/terrasse-ambiance" }
+          "settings": { "title": "Terrasse & Ambiance", "description": "Ambiances chaleureuses pour vos soirées", "icon": "sparkle", "link": "/collections/terrasse-ambiance" }
         },
         "col-best": {
           "type": "mega_column",
-          "settings": { "title": "Best-sellers", "link": "/collections/best-sellers" }
+          "settings": { "title": "Best-sellers", "description": "Nos pièces les plus plébiscitées", "icon": "shield", "link": "/collections/best-sellers" }
         }
       },
       "block_order": ["col-jardin", "col-terrasse", "col-best"]
     }
   },
-  "order": ["header"]
+  "order": ["announcement", "header"]
 }

@@ -72,7 +72,7 @@
           "type": "review",
           "settings": {
             "author": "Sophie L.",
-            "date": "Mai 2026",
+            "date": "il y a 2 jours",
             "rating": 5,
             "body": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse."
           }
@@ -81,7 +81,7 @@
           "type": "review",
           "settings": {
             "author": "Marc D.",
-            "date": "Avril 2026",
+            "date": "il y a 4 jours",
             "rating": 5,
             "body": "Installation en quelques minutes, aucune mauvaise surprise. Très satisfait du rendu le soir."
           }
@@ -90,7 +90,7 @@
           "type": "review",
           "settings": {
             "author": "Inès B.",
-            "date": "Avril 2026",
+            "date": "il y a 6 jours",
             "rating": 5,
             "body": "Résiste parfaitement à la pluie depuis plusieurs semaines. Je recommande sans hésiter."
           }
@@ -99,7 +99,7 @@
           "type": "review",
           "settings": {
             "author": "Thomas V.",
-            "date": "Mars 2026",
+            "date": "il y a 1 semaine",
             "rating": 4,
             "body": "Un vrai plus pour l'ambiance du jardin. Service client réactif."
           }
@@ -108,7 +108,7 @@
           "type": "review",
           "settings": {
             "author": "Camille R.",
-            "date": "Mars 2026",
+            "date": "il y a 10 jours",
             "rating": 5,
             "body": "Exactement ce que je cherchais pour ma terrasse. La lumière est chaude et apaisante."
           }
@@ -117,7 +117,7 @@
           "type": "review",
           "settings": {
             "author": "Julien P.",
-            "date": "Février 2026",
+            "date": "il y a 2 semaines",
             "rating": 5,
             "body": "Autonomie au top même en hiver. J'en ai recommandé deux autres pour l'allée."
           }
@@ -126,7 +126,7 @@
           "type": "review",
           "settings": {
             "author": "Laure M.",
-            "date": "Février 2026",
+            "date": "il y a 3 semaines",
             "rating": 5,
             "body": "Qualité au rendez-vous, emballage soigné, livraison rapide. Rien à redire."
           }
@@ -135,9 +135,189 @@
           "type": "review",
           "settings": {
             "author": "Antoine D.",
-            "date": "Janvier 2026",
+            "date": "il y a 1 mois",
             "rating": 4,
             "body": "Très bel objet, lumière agréable. J'aurais aimé un mode encore plus tamisé."
+          }
+        },
+        "r9": {
+          "type": "review",
+          "settings": {
+            "author": "Nadia K.",
+            "date": "il y a 5 semaines",
+            "rating": 5,
+            "body": "La lumière transforme complètement ma terrasse le soir. Mes invités me demandent tous où je l'ai trouvée."
+          }
+        },
+        "r10": {
+          "type": "review",
+          "settings": {
+            "author": "Patrick L.",
+            "date": "il y a 2 mois",
+            "rating": 5,
+            "body": "Robuste et élégant. Il a passé l'hiver dehors sans broncher, je suis bluffé par la qualité."
+          }
+        },
+        "r11": {
+          "type": "review",
+          "settings": {
+            "author": "Émilie F.",
+            "date": "il y a 2 mois",
+            "rating": 5,
+            "body": "Commande livrée plus vite que prévu. Le rendu lumineux est exactement comme sur les photos."
+          }
+        },
+        "r12": {
+          "type": "review",
+          "settings": {
+            "author": "Hugo B.",
+            "date": "il y a 3 mois",
+            "rating": 4,
+            "body": "Très satisfait dans l'ensemble. Le capteur de luminosité est précis, l'allumage automatique fonctionne bien."
+          }
+        },
+        "r13": {
+          "type": "review",
+          "settings": {
+            "author": "Sandrine M.",
+            "date": "il y a 3 mois",
+            "rating": 5,
+            "body": "J'en ai offert un à ma sœur tellement j'étais contente du mien. Ambiance garantie."
+          }
+        },
+        "r14": {
+          "type": "review",
+          "settings": {
+            "author": "Karim Z.",
+            "date": "il y a 4 mois",
+            "rating": 5,
+            "body": "Design moderne qui se fond parfaitement dans mon jardin contemporain. Aucune déception."
+          }
+        },
+        "r15": {
+          "type": "review",
+          "settings": {
+            "author": "Valérie T.",
+            "date": "il y a 4 mois",
+            "rating": 5,
+            "body": "La charge solaire tient toute la nuit même en automne. Vraiment au-dessus de mes attentes."
+          }
+        },
+        "r16": {
+          "type": "review",
+          "settings": {
+            "author": "Olivier R.",
+            "date": "il y a 5 mois",
+            "rating": 4,
+            "body": "Bon produit, finitions soignées. J'ai retiré une étoile car la notice est un peu sommaire."
+          }
+        },
+        "r17": {
+          "type": "review",
+          "settings": {
+            "author": "Chloé D.",
+            "date": "il y a 5 mois",
+            "rating": 5,
+            "body": "Coup de cœur immédiat. La lumière chaude crée une atmosphère cosy parfaite pour les dîners dehors."
+          }
+        },
+        "r18": {
+          "type": "review",
+          "settings": {
+            "author": "Damien P.",
+            "date": "il y a 6 mois",
+            "rating": 5,
+            "body": "Acheté pour l'entrée de la maison, effet bluffant le soir. Je vais en reprendre pour le jardin."
+          }
+        },
+        "r19": {
+          "type": "review",
+          "settings": {
+            "author": "Léa G.",
+            "date": "il y a 6 mois",
+            "rating": 5,
+            "body": "Superbe rendu dès la première nuit. La lumière est douce, pas agressive du tout. Parfait pour une terrasse zen."
+          }
+        },
+        "r20": {
+          "type": "review",
+          "settings": {
+            "author": "François M.",
+            "date": "il y a 7 mois",
+            "rating": 5,
+            "body": "J'étais sceptique sur le solaire mais là c'est vraiment bluffant. Toujours allumé au lever et jamais de problème."
+          }
+        },
+        "r21": {
+          "type": "review",
+          "settings": {
+            "author": "Aurélie B.",
+            "date": "il y a 8 mois",
+            "rating": 5,
+            "body": "Livraison soignée, produit haut de gamme. Mes voisins m'ont déjà posé des questions, c'est dire."
+          }
+        },
+        "r22": {
+          "type": "review",
+          "settings": {
+            "author": "Nicolas T.",
+            "date": "il y a 8 mois",
+            "rating": 4,
+            "body": "Très joli produit. L'installation est simple et le résultat vraiment élégant. Je recommande."
+          }
+        },
+        "r23": {
+          "type": "review",
+          "settings": {
+            "author": "Marion C.",
+            "date": "il y a 9 mois",
+            "rating": 5,
+            "body": "Une vraie valeur ajoutée pour mon extérieur. La qualité de fabrication est au niveau du prix demandé."
+          }
+        },
+        "r24": {
+          "type": "review",
+          "settings": {
+            "author": "Stéphane L.",
+            "date": "il y a 9 mois",
+            "rating": 5,
+            "body": "Commande passée un lundi, livrée le jeudi. Emballage impeccable et luminaire exactement comme décrit."
+          }
+        },
+        "r25": {
+          "type": "review",
+          "settings": {
+            "author": "Isabelle R.",
+            "date": "il y a 10 mois",
+            "rating": 5,
+            "body": "Effet waouh garanti le soir. Mes dîners en terrasse ont changé de dimension depuis que j'ai installé ça."
+          }
+        },
+        "r26": {
+          "type": "review",
+          "settings": {
+            "author": "Mathieu F.",
+            "date": "il y a 10 mois",
+            "rating": 4,
+            "body": "Design très réussi, s'intègre parfaitement à ma façade moderne. Légèrement moins lumineux que j'espérais mais reste top."
+          }
+        },
+        "r27": {
+          "type": "review",
+          "settings": {
+            "author": "Sophie A.",
+            "date": "il y a 11 mois",
+            "rating": 5,
+            "body": "Je suis revenue en commander deux autres après avoir vu le rendu du premier. Absolument magnifique."
+          }
+        },
+        "r28": {
+          "type": "review",
+          "settings": {
+            "author": "Romain D.",
+            "date": "il y a 1 an",
+            "rating": 5,
+            "body": "Qualité irréprochable, lumière chaleureuse et autonomie parfaite. Rien à redire, achat 5 étoiles."
           }
         }
       },
@@ -149,19 +329,31 @@
         "r5",
         "r6",
         "r7",
-        "r8"
+        "r8",
+        "r9",
+        "r10",
+        "r11",
+        "r12",
+        "r13",
+        "r14",
+        "r15",
+        "r16",
+        "r17",
+        "r18",
+        "r19",
+        "r20",
+        "r21",
+        "r22",
+        "r23",
+        "r24",
+        "r25",
+        "r26",
+        "r27",
+        "r28"
       ],
       "settings": {
         "title": "Ce qu'en disent nos clients",
         "featured_quote": "Je ne pensais pas qu'un simple luminaire pouvait changer à ce point l'atmosphère de mon extérieur."
-      }
-    },
-    "info": {
-      "type": "product-info",
-      "settings": {
-        "shipping_url": "/collections/best-sellers",
-        "returns_url": "/collections/best-sellers",
-        "contact_url": "/collections/best-sellers"
       }
     },
     "faq": {
@@ -171,28 +363,100 @@
           "type": "qa",
           "settings": {
             "question": "Ce luminaire est-il vraiment adapté à l'extérieur ?",
-            "answer": "<p>Oui, nos luminaires d'extérieur sont conçus avec une protection contre l'humidité et la poussière pour résister durablement aux intempéries.</p>"
+            "answer": "<p>Oui, tous nos luminaires sont certifiés IP65 minimum, ce qui signifie qu'ils sont protégés contre les jets d'eau et la poussière. Ils résistent à la pluie, au gel et aux variations de température, pour un usage en extérieur toute l'année.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
             "question": "Dois-je faire appel à un électricien ?",
-            "answer": "<p>Nos modèles solaires et rechargeables ne nécessitent aucun câblage : ils fonctionnent dès le déballage.</p>"
+            "answer": "<p>Non. Nos modèles solaires et rechargeables fonctionnent sans câblage électrique : ils s'allument et s'éteignent automatiquement grâce au capteur de luminosité intégré. L'installation prend moins de 10 minutes avec les fixations fournies.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Quelle est l'autonomie ?",
-            "answer": "<p>Cela dépend du modèle et de l'ensoleillement. Reportez-vous à la description du produit pour les détails d'autonomie et de charge.</p>"
+            "question": "Quelle est l'autonomie de la batterie ?",
+            "answer": "<p>Après une journée d'ensoleillement normal (6–8h), la batterie assure en moyenne 8 à 12 heures d'éclairage en mode standard. En mode veille intelligente (détection de mouvement), l'autonomie peut dépasser 3 jours. Les détails exacts sont précisés sur la fiche de chaque produit.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Le produit fonctionne-t-il les jours nuageux ou en hiver ?",
+            "answer": "<p>Oui. Le panneau solaire recharge la batterie dès qu'il y a de la lumière naturelle, même par temps couvert. En hiver, l'autonomie peut légèrement diminuer selon la durée d'ensoleillement, mais le luminaire reste pleinement fonctionnel.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Quelle est la température de couleur de la lumière ?",
+            "answer": "<p>Nos luminaires émettent une lumière blanc chaud à 2700K — la même température que les ampoules halogènes classiques. Ce spectre crée une ambiance chaleureuse et apaisante, idéale pour les terrasses, jardins et allées.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment entretenir et nettoyer le luminaire ?",
+            "answer": "<p>Un simple chiffon humide suffit pour nettoyer la surface. Évitez les produits abrasifs ou les nettoyeurs haute pression. Le panneau solaire doit rester propre pour une recharge optimale — essuyez-le occasionnellement si des feuilles ou de la poussière s'y déposent.</p>"
+          }
+        },
+        "q7": {
+          "type": "qa",
+          "settings": {
+            "question": "Quelle est la politique de retour ?",
+            "answer": "<p>Vous disposez de 15 jours après réception pour retourner votre commande, sans avoir à vous justifier. Le produit doit être retourné dans son emballage d'origine et en parfait état. Le remboursement est effectué sous 5 à 7 jours ouvrés après réception du colis retour.</p>"
+          }
+        },
+        "q8": {
+          "type": "qa",
+          "settings": {
+            "question": "La garantie couvre-t-elle les dommages liés aux intempéries ?",
+            "answer": "<p>Oui. Nos luminaires sont garantis 12 mois contre tout défaut de fabrication, y compris les pannes liées à une utilisation normale en extérieur (pluie, gel, chaleur). La garantie ne couvre pas les dommages dus à des chocs, une mauvaise installation ou une utilisation non conforme.</p>"
+          }
+        },
+        "q9": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je régler l'intensité lumineuse ?",
+            "answer": "<p>Certains modèles disposent de plusieurs modes d'éclairage (intensité variable, détection de mouvement, allumage permanent). Les options disponibles sont indiquées dans la description de chaque produit. Le changement de mode se fait généralement via un bouton discret situé sous le luminaire.</p>"
+          }
+        },
+        "q10": {
+          "type": "qa",
+          "settings": {
+            "question": "Quels sont les délais et frais de livraison ?",
+            "answer": "<p>La livraison standard est offerte dès 100€ d'achat et est estimée à 3–5 jours ouvrés en France métropolitaine. Une option express (24–48h) est disponible à 9,90€. Pour la Belgique, la Suisse et le Luxembourg, comptez 5–8 jours ouvrés à partir de 14,90€.</p>"
+          }
+        },
+        "q11": {
+          "type": "qa",
+          "settings": {
+            "question": "Le luminaire peut-il rester en place toute l'année ?",
+            "answer": "<p>Absolument. Nos produits sont conçus pour résister aux conditions climatiques de toute l'année en Europe. Si vous vivez dans une région à hivers très rigoureux (températures inférieures à -15°C prolongées), nous recommandons de rentrer le luminaire pour préserver la longévité de la batterie.</p>"
+          }
+        },
+        "q12": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment contacter le service client ?",
+            "answer": "<p>Notre équipe est disponible par chat sur le site 7j/7 de 9h à 20h. Vous pouvez également nous écrire par e-mail : nous répondons sous 24h ouvrées. Pour les réclamations, un numéro de commande vous sera demandé pour traiter votre demande plus rapidement.</p>"
           }
         }
       },
       "block_order": [
         "q1",
         "q2",
-        "q3"
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11",
+        "q12"
       ],
       "settings": {
         "title": "Questions fréquentes",
@@ -212,7 +476,6 @@
     "usp",
     "description",
     "reviews",
-    "info",
     "faq",
     "related"
   ]

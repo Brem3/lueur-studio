@@ -1,32 +1,73 @@
 <section class="hero">
-  <div class="hero__media">
-    {% if section.settings.video != blank %}
-      {{ section.settings.video | video_tag: image_size: '1600x', autoplay: true, loop: true, muted: true, controls: false }}
-    {% elsif section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '100vw', widths: '800, 1200, 1600, 1800' }}
-    {% else %}
-      <div class="hero__backdrop"></div>
-    {% endif %}
-  </div>
-  <div class="hero__overlay"></div>
-  <div class="hero__glow"></div>
+  <div class="hero__frame">
+    <div class="hero__media">
+      {% if section.settings.video != blank %}
+        {{ section.settings.video | video_tag: image_size: '1600x', autoplay: true, loop: true, muted: true, controls: false }}
+      {% elsif section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', sizes: '100vw', widths: '800, 1200, 1600, 1800' }}
+      {% else %}
+        <img
+          src="{{ 'hero_image.png' | asset_url }}"
+          alt="{{ shop.name }}"
+          loading="eager"
+          fetchpriority="high"
+          width="1672"
+          height="941"
+          class="hero__default-bg"
+        >
+      {% endif %}
+    </div>
+    <div class="hero__overlay"></div>
 
-  <div class="hero__content">
-    {% if section.settings.eyebrow != blank %}
-      <span class="section__eyebrow">{{ section.settings.eyebrow }}</span>
-    {% endif %}
-    <h1 class="hero__title">{{ section.settings.title }}</h1>
-    {% if section.settings.subtitle != blank %}
-      <p class="hero__subtitle">{{ section.settings.subtitle }}</p>
-    {% endif %}
-    {% if section.settings.cta_label != blank %}
-      <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_label }}</a>
-    {% endif %}
-  </div>
+    <div class="hero__content">
+      <div class="hero__top">
+        {% if section.settings.eyebrow != blank %}
+          <span class="section__eyebrow hero__eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+        <h1 class="hero__title">{{ section.settings.title }}</h1>
+        {% if section.settings.subtitle != blank %}
+          <p class="hero__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
 
-  <a href="#main-scroll" class="hero__scroll" aria-label="{{ 'general.scroll' | t }}">
-    {% render 'icon', name: 'chevron-down' %}
-  </a>
+      {% if section.settings.show_reviews %}
+        <div class="hero__reviews">
+          {% render 'star-rating', rating: 5, show_text: false %}
+          <a href="{{ section.settings.reviews_url | default: '#reviews' }}">{{ section.settings.reviews_label }}</a>
+        </div>
+      {% endif %}
+
+      <div class="hero__bottom">
+        {% if section.blocks.size > 0 %}
+          <div class="hero__usp">
+            {% for block in section.blocks %}
+              <span class="hero__usp-item" {{ block.shopify_attributes }}>
+                {% render 'icon', name: block.settings.icon %}{{ block.settings.text }}
+              </span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="hero__actions">
+          {% if section.settings.cta_label != blank %}
+            <a href="{{ section.settings.cta_url }}" class="btn-primary">{{ section.settings.cta_label }}</a>
+          {% endif %}
+          {% if section.settings.cta2_label != blank %}
+            <a href="{{ section.settings.cta2_url }}" class="btn-secondary">{{ section.settings.cta2_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% if section.settings.badge_text != blank %}
+      <div class="hero__badge">{{ section.settings.badge_text }}</div>
+    {% endif %}
+
+    <div class="hero__dots" aria-hidden="true">
+      <span></span>
+      <span class="is-active"></span>
+    </div>
+  </div>
 </section>
 <span id="main-scroll"></span>
 
@@ -51,29 +92,114 @@
       "default": "Maison française d'éclairage d'extérieur"
     },
     {
-      "type": "text",
+      "type": "html",
       "id": "title",
       "label": "Titre",
-      "default": "Révélez vos extérieurs après le coucher du soleil."
+      "info": "Utilisez <em>…</em> pour mettre un mot en serif italique.",
+      "default": "Révélez vos <em>extérieurs</em> après le coucher du soleil."
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Sous-titre",
-      "default": "Des luminaires d'auteur qui transforment terrasses, jardins et allées en espaces habités, poétiques et premium."
+      "default": "Des luminaires d'auteur qui transforment terrasses, jardins et allées en espaces premium."
+    },
+    {
+      "type": "header",
+      "content": "Avis"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Afficher les étoiles + lien avis",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reviews_label",
+      "label": "Texte du lien avis",
+      "default": "Voir les avis"
+    },
+    {
+      "type": "url",
+      "id": "reviews_url",
+      "label": "Lien des avis"
+    },
+    {
+      "type": "header",
+      "content": "Boutons"
     },
     {
       "type": "text",
       "id": "cta_label",
-      "label": "Texte du bouton",
+      "label": "Bouton principal",
       "default": "Découvrir la collection"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "Lien du bouton"
+      "label": "Lien bouton principal"
+    },
+    {
+      "type": "text",
+      "id": "cta2_label",
+      "label": "Bouton secondaire",
+      "default": "Explorer"
+    },
+    {
+      "type": "url",
+      "id": "cta2_url",
+      "label": "Lien bouton secondaire"
+    },
+    {
+      "type": "header",
+      "content": "Badge flottant"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texte du badge vertical",
+      "info": "Laisser vide pour masquer."
     }
   ],
-  "presets": [{ "name": "Hero cinématique" }]
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "Argument hero",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "truck", "label": "Camion" },
+            { "value": "return", "label": "Retour" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "check", "label": "Coche" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison offerte"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Hero cinématique",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "truck", "text": "Livraison offerte" } },
+        { "type": "usp", "settings": { "icon": "return", "text": "Retours 30 jours" } },
+        { "type": "usp", "settings": { "icon": "shield", "text": "Garantie 2 ans" } }
+      ]
+    }
+  ]
 }
 {% endschema %}

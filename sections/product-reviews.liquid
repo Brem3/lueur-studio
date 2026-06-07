@@ -1,4 +1,4 @@
-<section class="section section--secondary" id="reviews">
+<section class="section section--secondary section--product-tab" id="reviews">
   <div class="container">
     <div class="section__head reveal">
       <span class="section__eyebrow">{{ 'product.reviews.eyebrow' | t }}</span>
@@ -26,6 +26,14 @@
             </article>
           {% endfor %}
         </div>
+      </div>
+      <div class="review-carousel__nav">
+        <button type="button" class="carousel-arrow review-carousel__arrow review-carousel__arrow--prev" data-review-prev aria-label="{{ 'general.previous' | t }}">
+          {% render 'icon', name: 'chevron-right' %}
+        </button>
+        <button type="button" class="carousel-arrow review-carousel__arrow review-carousel__arrow--next" data-review-next aria-label="{{ 'general.next' | t }}">
+          {% render 'icon', name: 'chevron-right' %}
+        </button>
       </div>
     </div>
   </div>

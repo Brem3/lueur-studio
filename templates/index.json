@@ -13,11 +13,23 @@
       "type": "hero-cinematic",
       "settings": {
         "eyebrow": "Maison française d'éclairage d'extérieur",
-        "title": "Révélez vos extérieurs après le coucher du soleil.",
-        "subtitle": "Des luminaires d'auteur qui transforment terrasses, jardins et allées en espaces habités, poétiques et premium.",
+        "title": "Révélez vos <em>extérieurs</em> après le coucher du soleil.",
+        "subtitle": "Des luminaires d'auteur qui transforment terrasses, jardins et allées en espaces premium.",
+        "show_reviews": true,
+        "reviews_label": "Voir les avis",
+        "reviews_url": "#reviews",
         "cta_label": "Découvrir la collection",
-        "cta_url": "/collections/best-sellers"
-      }
+        "cta_url": "/collections/best-sellers",
+        "cta2_label": "Explorer",
+        "cta2_url": "/collections/all",
+        "badge_text": "Design français"
+      },
+      "blocks": {
+        "h1": { "type": "usp", "settings": { "icon": "truck", "text": "Livraison offerte" } },
+        "h2": { "type": "usp", "settings": { "icon": "return", "text": "Retours 30 jours" } },
+        "h3": { "type": "usp", "settings": { "icon": "shield", "text": "Garantie 2 ans" } }
+      },
+      "block_order": ["h1", "h2", "h3"]
     },
     "usp": {
       "type": "usp-band",
@@ -59,6 +71,35 @@
       ],
       "settings": {}
     },
+    "partners": {
+      "type": "partner-logos",
+      "settings": { "title": "Ils nous font confiance" },
+      "blocks": {
+        "p1": { "type": "logo", "settings": { "name": "Maison & Jardin" } },
+        "p2": { "type": "logo", "settings": { "name": "Côté Maison" } },
+        "p3": { "type": "logo", "settings": { "name": "Elle Déco" } },
+        "p4": { "type": "logo", "settings": { "name": "Art & Décoration" } },
+        "p5": { "type": "logo", "settings": { "name": "Marie Claire" } },
+        "p6": { "type": "logo", "settings": { "name": "AD Magazine" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "p5", "p6"]
+    },
+    "editorial": {
+      "type": "editorial-grid",
+      "settings": {
+        "eyebrow": "L'expérience Lueur",
+        "heading": "Chaque extérieur mérite <em>sa lumière</em>.",
+        "cta_label": "Découvrir la collection",
+        "cta_url": "/collections/best-sellers"
+      },
+      "blocks": {
+        "e1": { "type": "card", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1005/0823/8201/files/image_1.jpg?v=1780764413", "title": "Voir, vivre, <em>éclairer</em>", "description": "Une lumière pensée pour sublimer chaque recoin de vos extérieurs." } },
+        "e2": { "type": "card", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1005/0823/8201/files/image_2.jpg?v=1780764413", "title": "Idéal pour <em>les terrasses</em>", "description": "Des ambiances chaleureuses qui prolongent vos soirées d'été." } },
+        "e3": { "type": "card", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1005/0823/8201/files/image_3.jpg?v=1780764413", "title": "Résiste à <em>tout temps</em>", "description": "Certifié IP65 : pluie, gel et chaleur n'altèrent rien." } },
+        "e4": { "type": "card", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1005/0823/8201/files/image_4.jpg?v=1780764413", "title": "Pensé pour <em>l'extérieur</em>", "description": "Solaire ou filaire, une solution pour chaque jardin." } }
+      },
+      "block_order": ["e1", "e2", "e3", "e4"]
+    },
     "bestsellers": {
       "type": "featured-products",
       "settings": {
@@ -78,7 +119,8 @@
         "title": "La lumière comme architecture d'ambiance",
         "body": "<p>Chez Lueur Studio, nous ne fabriquons pas de simples lampes. Nous sculptons la lumière pour révéler vos extérieurs dès la tombée du soir — comme un hôtel particulier qui s'éveille à la nuit.</p>",
         "cta_label": "",
-        "cta_url": ""
+        "cta_url": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/1005/0823/8201/files/image_5.png?v=1780764721"
       }
     },
     "social": {
@@ -104,35 +146,37 @@
             "value": "15 j",
             "label": "satisfait ou remboursé"
           }
-        }
+        },
+        "rv1": { "type": "review", "settings": { "author": "Sophie L.", "date": "il y a 2 jours", "rating": 5, "body": "Magnifique en vrai, encore plus que sur les photos. La lumière est douce et chaleureuse." } },
+        "rv2": { "type": "review", "settings": { "author": "Marc D.", "date": "il y a 5 jours", "rating": 5, "body": "Installation en quelques minutes, aucune mauvaise surprise. Très satisfait du rendu le soir." } },
+        "rv3": { "type": "review", "settings": { "author": "Camille R.", "date": "il y a 1 semaine", "rating": 5, "body": "Exactement ce que je cherchais pour ma terrasse. La lumière est chaude et apaisante." } },
+        "rv4": { "type": "review", "settings": { "author": "Nadia K.", "date": "il y a 10 jours", "rating": 5, "body": "La lumière transforme complètement ma terrasse le soir. Mes invités me demandent tous où je l'ai trouvée." } },
+        "rv5": { "type": "review", "settings": { "author": "Léa G.", "date": "il y a 2 semaines", "rating": 5, "body": "Superbe rendu dès la première nuit. La lumière est douce, pas agressive du tout. Parfait pour une terrasse zen." } },
+        "rv6": { "type": "review", "settings": { "author": "Julien P.", "date": "il y a 3 semaines", "rating": 5, "body": "Autonomie au top même en hiver. J'en ai recommandé deux autres pour l'allée." } },
+        "rv7": { "type": "review", "settings": { "author": "Émilie F.", "date": "il y a 1 mois", "rating": 5, "body": "Commande livrée plus vite que prévu. Le rendu lumineux est exactement comme sur les photos." } },
+        "rv8": { "type": "review", "settings": { "author": "Sandrine M.", "date": "il y a 5 semaines", "rating": 5, "body": "J'en ai offert un à ma sœur tellement j'étais contente du mien. Ambiance garantie." } },
+        "rv9": { "type": "review", "settings": { "author": "Chloé D.", "date": "il y a 2 mois", "rating": 5, "body": "Coup de cœur immédiat. La lumière chaude crée une atmosphère cosy parfaite pour les dîners dehors." } },
+        "rv10": { "type": "review", "settings": { "author": "Patrick L.", "date": "il y a 3 mois", "rating": 5, "body": "Robuste et élégant. Il a passé l'hiver dehors sans broncher, je suis bluffé par la qualité." } }
       },
       "block_order": [
         "st1",
         "st2",
-        "st3"
+        "st3",
+        "rv1", "rv2", "rv3", "rv4", "rv5", "rv6", "rv7", "rv8", "rv9", "rv10"
       ],
       "settings": {
         "quote": "« Nos soirées d'été ont changé de dimension. La terrasse est devenue la plus belle pièce de la maison. »",
         "author": "Camille R. — Aix-en-Provence"
       }
-    },
-    "guide": {
-      "type": "guide-teaser",
-      "settings": {
-        "eyebrow": "Le guide",
-        "title": "Quelle lumière pour quel extérieur ?",
-        "body": "Solaire ou filaire, IP65 ou IP67, applique ou borne… Notre guide vous aide à choisir le luminaire parfait pour chaque espace, sans vous tromper.",
-        "cta_label": "Lire le guide d'achat",
-        "cta_url": "/collections/best-sellers"
-      }
     }
   },
   "order": [
     "hero",
+    "partners",
     "usp",
     "bestsellers",
+    "editorial",
     "story",
-    "social",
-    "guide"
+    "social"
   ]
 }

@@ -1,35 +1,65 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <nav class="site-header__nav site-header__nav--left" aria-label="{{ 'accessibility.nav_primary' | t }}">
-      <button class="header-toggle" data-menu-toggle aria-expanded="false" aria-label="{{ 'accessibility.menu' | t }}">
+      <button class="header-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-drawer" aria-label="{{ 'accessibility.menu' | t }}">
         {% render 'icon', name: 'menu' %}
       </button>
-      <div class="has-mega">
-        <a href="{{ routes.all_products_collection_url }}" class="nav-link">
+
+      <div class="nav-item has-mega" data-nav-item>
+        <button type="button" class="nav-link nav-trigger" data-nav-trigger aria-expanded="false">
           {{ 'header.collections' | t }}
-        </a>
-        <div class="mega-menu">
-          <div class="container">
+          <span class="nav-trigger__chevron">{% render 'icon', name: 'chevron-down' %}</span>
+          <span class="nav-trigger__indicator" aria-hidden="true"></span>
+        </button>
+
+        <div class="mega-menu" data-nav-content>
+          <div class="mega-menu__viewport">
             <div class="mega-menu__grid">
               {% for block in section.blocks %}
                 {% if block.type == 'mega_column' %}
-                  <a href="{{ block.settings.link }}" class="mega-card" {{ block.shopify_attributes }}>
-                    <div class="mega-card__media">
-                      {% render 'media', image: block.settings.image, label: block.settings.title, width: 600 %}
+                  <a href="{{ block.settings.link }}" class="nav-large-item" {{ block.shopify_attributes }}>
+                    {% if block.settings.image != blank %}
+                      <div class="nav-large-item__media">
+                        {% render 'media', image: block.settings.image, label: block.settings.title, width: 600 %}
+                      </div>
+                    {% endif %}
+                    <div class="nav-large-item__row">
+                      <div class="nav-large-item__text">
+                        <span class="nav-large-item__title">{{ block.settings.title }}</span>
+                        {% if block.settings.description != blank %}
+                          <p class="nav-large-item__desc">{{ block.settings.description }}</p>
+                        {% endif %}
+                      </div>
+                      {% if block.settings.icon != 'none' %}
+                        <span class="nav-large-item__icon">{% render 'icon', name: block.settings.icon %}</span>
+                      {% endif %}
                     </div>
-                    <span class="mega-card__title">{{ block.settings.title }}</span>
                   </a>
                 {% endif %}
               {% endfor %}
             </div>
+
             <div class="mega-menu__links">
-              <a href="{{ routes.all_products_collection_url }}">{{ 'header.all_collection' | t }}</a>
-              <a href="{{ routes.all_products_collection_url }}?sort_by=created-descending">{{ 'header.new' | t }}</a>
-              <a href="{{ routes.all_products_collection_url }}?sort_by=best-selling">{{ 'header.bestsellers' | t }}</a>
+              <a href="{{ routes.all_products_collection_url }}" class="nav-small-item">
+                <span class="nav-small-item__icon">{% render 'icon', name: 'sparkle' %}</span>
+                <span class="nav-small-item__label">{{ 'header.all_collection' | t }}</span>
+                <span class="nav-small-item__arrow">{% render 'icon', name: 'chevron-right' %}</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}?sort_by=created-descending" class="nav-small-item">
+                <span class="nav-small-item__icon">{% render 'icon', name: 'bolt' %}</span>
+                <span class="nav-small-item__label">{{ 'header.new' | t }}</span>
+                <span class="nav-small-item__arrow">{% render 'icon', name: 'chevron-right' %}</span>
+              </a>
+              <a href="{{ routes.all_products_collection_url }}?sort_by=best-selling" class="nav-small-item">
+                <span class="nav-small-item__icon">{% render 'icon', name: 'shield' %}</span>
+                <span class="nav-small-item__label">{{ 'header.bestsellers' | t }}</span>
+                <span class="nav-small-item__arrow">{% render 'icon', name: 'chevron-right' %}</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
       <a href="{{ section.settings.guide_url }}" class="nav-link">{{ 'header.buying_guide' | t }}</a>
       <a href="{{ section.settings.blog_url }}" class="nav-link">{{ 'header.inspirations' | t }}</a>
     </nav>
@@ -37,13 +67,62 @@
     <a href="{{ routes.root_url }}" class="site-header__logo">{{ shop.name }}</a>
 
     <nav class="site-header__nav site-header__nav--right" aria-label="{{ 'accessibility.nav_utility' | t }}">
+      <a href="{{ routes.all_products_collection_url }}" class="header-shop-btn">{{ 'header.shop' | t }}</a>
+      <a href="{{ routes.search_url }}" class="header-icon" aria-label="{{ 'header.search' | t }}">
+        {% render 'icon', name: 'search' %}
+      </a>
+      <a href="{{ routes.account_url }}" class="header-icon" aria-label="{{ 'header.account' | t }}">
+        {% render 'icon', name: 'user' %}
+      </a>
       <a href="{{ routes.cart_url }}" class="header-icon" aria-label="{{ 'header.cart' | t }}">
         {% render 'icon', name: 'cart' %}<span class="cart-count">{{ cart.item_count }}</span>
       </a>
     </nav>
   </div>
 
-  <details data-mobile-drawer class="visually-hidden"></details>
+  {%- comment -%} Tiroir mobile (inspiré NavItemMobile) {%- endcomment -%}
+  <div id="mobile-drawer" class="mobile-drawer" data-mobile-drawer hidden>
+    <div class="mobile-drawer__panel">
+      <div class="mobile-drawer__head">
+        <span class="mobile-drawer__title">{{ shop.name }}</span>
+        <button type="button" class="mobile-drawer__close" data-menu-close aria-label="{{ 'accessibility.close' | t }}">
+          {% render 'icon', name: 'sparkle' %}
+        </button>
+      </div>
+
+      <nav class="mobile-drawer__nav" aria-label="{{ 'accessibility.nav_primary' | t }}">
+        {% for block in section.blocks %}
+          {% if block.type == 'mega_column' %}
+            <a href="{{ block.settings.link }}" class="nav-item-mobile" {{ block.shopify_attributes }}>
+              <span class="nav-item-mobile__icon">
+                {% if block.settings.icon != 'none' %}{% render 'icon', name: block.settings.icon %}{% else %}{% render 'icon', name: 'sparkle' %}{% endif %}
+              </span>
+              <span class="nav-item-mobile__text">
+                <span class="nav-item-mobile__title">{{ block.settings.title }}</span>
+                {% if block.settings.description != blank %}
+                  <span class="nav-item-mobile__desc">{{ block.settings.description }}</span>
+                {% endif %}
+              </span>
+            </a>
+          {% endif %}
+        {% endfor %}
+
+        <a href="{{ section.settings.guide_url }}" class="nav-item-mobile">
+          <span class="nav-item-mobile__icon">{% render 'icon', name: 'leaf' %}</span>
+          <span class="nav-item-mobile__text">
+            <span class="nav-item-mobile__title">{{ 'header.buying_guide' | t }}</span>
+          </span>
+        </a>
+        <a href="{{ section.settings.blog_url }}" class="nav-item-mobile">
+          <span class="nav-item-mobile__icon">{% render 'icon', name: 'sparkle' %}</span>
+          <span class="nav-item-mobile__text">
+            <span class="nav-item-mobile__title">{{ 'header.inspirations' | t }}</span>
+          </span>
+        </a>
+      </nav>
+    </div>
+    <button type="button" class="mobile-drawer__backdrop" data-menu-close tabindex="-1" aria-hidden="true"></button>
+  </div>
 </header>
 
 {% schema %}
@@ -71,6 +150,26 @@
           "id": "title",
           "label": "Titre",
           "default": "Terrasse"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Ambiances chaleureuses pour vos soirées"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "none", "label": "Aucune" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "sparkle", "label": "Étoile" },
+            { "value": "globe", "label": "Globe" }
+          ],
+          "default": "leaf"
         },
         {
           "type": "image_picker",

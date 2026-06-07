@@ -1,0 +1,97 @@
+{%- liquid
+  assign sticky_class = ''
+  if section.settings.sticky
+    assign sticky_class = 'announcement-bar--sticky'
+  endif
+-%}
+<div class="announcement-bar {{ sticky_class }}" role="region" aria-label="{{ 'accessibility.announcement' | t }}">
+  {%- if section.settings.mode == 'marquee' and section.blocks.size > 0 -%}
+    <div class="announcement-bar__marquee">
+      <div class="announcement-bar__track" data-marquee-track>
+        {%- for block in section.blocks -%}
+          <span class="announcement-bar__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != 'none' -%}{% render 'icon', name: block.settings.icon %}{%- endif -%}
+            {{ block.settings.text }}
+          </span>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- else -%}
+    <div class="announcement-bar__static">
+      {{ section.settings.message }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "settings": [
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Mode d'affichage",
+      "options": [
+        { "value": "static", "label": "Message fixe (centré)" },
+        { "value": "marquee", "label": "Texte défilant (blocs)" }
+      ],
+      "default": "static"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Coller en haut au scroll",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Message fixe",
+      "info": "Utilisé en mode « Message fixe »",
+      "default": "<p>Livraison offerte dès 150€ · <strong>Garantie 2 ans</strong> · Retours sous 15 jours</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Argument défilant",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "none", "label": "Aucune" },
+            { "value": "truck", "label": "Camion" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "return", "label": "Retour" },
+            { "value": "headset", "label": "Support" },
+            { "value": "sparkle", "label": "Étoile" }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison offerte dès 150€"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre d'annonce",
+      "settings": { "mode": "static", "sticky": false },
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "text": "Livraison offerte dès 150€" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "Garantie 2 ans" } },
+        { "type": "item", "settings": { "icon": "return", "text": "Retours sous 15 jours" } },
+        { "type": "item", "settings": { "icon": "bolt", "text": "Paiement en 3× sans frais" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

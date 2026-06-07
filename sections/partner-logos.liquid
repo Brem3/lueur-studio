@@ -1,0 +1,67 @@
+<section class="partner-logos">
+  <div class="container">
+    <div class="partner-logos__panel reveal">
+      {% if section.settings.title != blank %}
+        <span class="partner-logos__title">{{ section.settings.title }}</span>
+      {% endif %}
+      <div class="partner-logos__track">
+        {% for block in section.blocks %}
+          <div class="partner-logos__item" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: block.settings.name, class: 'partner-logos__img' }}
+            {% else %}
+              <span class="partner-logos__name">{{ block.settings.name }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logos partenaires",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ils nous font confiance"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo / mention",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo (image)"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom (si pas d'image)",
+          "default": "Presse"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Logos partenaires",
+      "blocks": [
+        { "type": "logo", "settings": { "name": "Maison & Jardin" } },
+        { "type": "logo", "settings": { "name": "Côté Maison" } },
+        { "type": "logo", "settings": { "name": "Elle Déco" } },
+        { "type": "logo", "settings": { "name": "Art & Décoration" } },
+        { "type": "logo", "settings": { "name": "Marie Claire" } },
+        { "type": "logo", "settings": { "name": "AD Magazine" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

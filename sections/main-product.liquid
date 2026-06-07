@@ -1,8 +1,8 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
-<section class="section">
+<section class="section section--product">
   <div class="container">
     <div class="product">
-      <div class="product__gallery" data-gallery>
+      <div class="product__gallery product__gallery--sticky" data-gallery>
         {%- assign main_image = current_variant.featured_media.preview_image | default: product.featured_image -%}
         <div class="product__gallery-main lamp-glow" data-gallery-main>
           {% if main_image %}
@@ -46,8 +46,17 @@
           {% endif %}
           <span class="current" data-variant-price>{{ current_variant.price | money }}</span>
         </div>
-        {% if section.settings.show_klarna %}
-          <p class="product__klarna">{{ 'product.klarna' | t: amount: current_variant.price | divided_by: 3 | money }}</p>
+
+        {%- assign feature_blocks = section.blocks | where: 'type', 'feature' -%}
+        {% if feature_blocks.size > 0 %}
+          <ul class="product__features">
+            {% for block in feature_blocks %}
+              <li class="product__feature" {{ block.shopify_attributes }}>
+                <span class="product__feature-icon">{% render 'icon', name: block.settings.icon %}</span>
+                <span class="product__feature-text">{{ block.settings.text }}</span>
+              </li>
+            {% endfor %}
+          </ul>
         {% endif %}
 
         {% form 'product', product, data-product-form: '' %}
@@ -102,6 +111,42 @@
 
           <input type="hidden" name="id" value="{{ current_variant.id }}">
 
+          {%- assign bundle_products = section.settings.bundle_products -%}
+          {% if bundle_products.count > 0 %}
+            <div class="product-bundle" data-bundle>
+              {% if section.settings.bundle_title != blank %}
+                <p class="product-bundle__title">{{ section.settings.bundle_title }}</p>
+              {% endif %}
+              {% for bp in bundle_products %}
+                {%- assign bv = bp.selected_or_first_available_variant -%}
+                {% if bv %}
+                  <label class="bundle-item" data-bundle-item>
+                    <input
+                      type="checkbox"
+                      class="bundle-item__check"
+                      data-bundle-variant="{{ bv.id }}"
+                      checked>
+                    <span class="bundle-item__box" aria-hidden="true">{% render 'icon', name: 'check' %}</span>
+                    <span class="bundle-item__media">
+                      {% if bp.featured_image %}
+                        {{ bp.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: bp.title }}
+                      {% endif %}
+                    </span>
+                    <span class="bundle-item__info">
+                      <span class="bundle-item__name">{{ bp.title }}</span>
+                      <span class="bundle-item__price">
+                        <span class="bundle-item__now">{{ bv.price | money }}</span>
+                        {% if bv.compare_at_price > bv.price %}
+                          <span class="bundle-item__was">{{ bv.compare_at_price | money }}</span>
+                        {% endif %}
+                      </span>
+                    </span>
+                  </label>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <div class="product__qty">
             <label class="product__option-label" for="qty" style="margin:0">{{ 'product.quantity' | t }}</label>
             <select id="qty" name="quantity">
@@ -119,20 +164,35 @@
 
           {{ form | payment_button }}
         {% endform %}
+        <span data-atc-anchor aria-hidden="true"></span>
 
-        <ul class="product__usp">
-          <li>{% render 'icon', name: 'check' %} {{ 'product.usp.shipping' | t }}</li>
-          <li>{% render 'icon', name: 'check' %} {{ 'product.usp.returns' | t }}</li>
-        </ul>
-
-        <div class="product__reassurance">
-          <div>{% render 'icon', name: 'truck' %} {{ 'product.delivery_estimate' | t }}</div>
-          <div>{% render 'icon', name: 'shield' %} {{ 'product.guarantee_line' | t }}</div>
-        </div>
       </div>
     </div>
   </div>
 </section>
+
+{%- comment -%} Barre add-to-cart flottante (inspirée Neutralighting) {%- endcomment -%}
+<div class="float-atc" data-float-atc>
+  <div class="container float-atc__inner">
+    <div class="float-atc__info">
+      {%- assign atc_image = current_variant.featured_media.preview_image | default: product.featured_image -%}
+      {% if atc_image %}
+        <div class="float-atc__thumb">
+          {{ atc_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}
+        </div>
+      {% endif %}
+      <div class="float-atc__meta">
+        <span class="float-atc__title">{{ product.title }}</span>
+        <span class="float-atc__price" data-variant-price>{{ current_variant.price | money }}</span>
+      </div>
+    </div>
+    <div class="float-atc__cta">
+      <button type="button" class="btn-primary" data-float-atc-button {% unless current_variant.available %}disabled{% endunless %}>
+        {% if current_variant.available %}{{ 'product.add_to_cart' | t }}{% else %}{{ 'product.sold_out' | t }}{% endif %}
+      </button>
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {
@@ -143,6 +203,66 @@
       "id": "show_klarna",
       "label": "Afficher le paiement en 3x",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Bundle / ventes croisées"
+    },
+    {
+      "type": "text",
+      "id": "bundle_title",
+      "label": "Titre du bundle",
+      "default": "Bundle -15% accessoires"
+    },
+    {
+      "type": "product_list",
+      "id": "bundle_products",
+      "label": "Produits du bundle",
+      "limit": 4,
+      "info": "Cochés par défaut, ajoutés au panier avec le produit principal."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Point clé (grille)",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "default": "check",
+          "options": [
+            { "value": "check", "label": "Coche" },
+            { "value": "sparkle", "label": "Étincelle" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "shield", "label": "Bouclier" },
+            { "value": "truck", "label": "Camion" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "globe", "label": "Globe" },
+            { "value": "headset", "label": "Casque audio" },
+            { "value": "calendar", "label": "Calendrier" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Décrivez un avantage clé du produit."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Produit",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
     }
   ]
 }

@@ -13,7 +13,33 @@
 
     {% render 'gold-rule' %}
 
-    {% if section.settings.quote != blank %}
+    {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+    {% if review_blocks.size > 0 %}
+      <div class="reviews">
+        <div class="review-carousel" data-review-carousel>
+          <div class="review-track" data-review-track>
+            {% for block in review_blocks %}
+              <article class="review-card" {{ block.shopify_attributes }}>
+                <div class="review-card__head">
+                  <span class="review-card__author">{{ block.settings.author }}</span>
+                  <span class="review-card__date">{{ block.settings.date }}</span>
+                </div>
+                <div style="margin-bottom:0.6rem">{% render 'star-rating', rating: block.settings.rating, show_text: false %}</div>
+                <p class="review-card__body">{{ block.settings.body }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="review-carousel__nav">
+          <button type="button" class="carousel-arrow review-carousel__arrow review-carousel__arrow--prev" data-review-prev aria-label="{{ 'general.previous' | t }}">
+            {% render 'icon', name: 'chevron-right' %}
+          </button>
+          <button type="button" class="carousel-arrow review-carousel__arrow review-carousel__arrow--next" data-review-next aria-label="{{ 'general.next' | t }}">
+            {% render 'icon', name: 'chevron-right' %}
+          </button>
+        </div>
+      </div>
+    {% elsif section.settings.quote != blank %}
       <blockquote class="quote">{{ section.settings.quote }}</blockquote>
       <cite class="quote__author">{{ section.settings.author }}</cite>
     {% endif %}
@@ -27,13 +53,13 @@
     {
       "type": "textarea",
       "id": "quote",
-      "label": "Citation client",
+      "label": "Citation client (si pas d'avis)",
       "default": "« Nos soirées d'été ont changé de dimension. La terrasse est devenue la plus belle pièce de la maison. »"
     },
     {
       "type": "text",
       "id": "author",
-      "label": "Auteur",
+      "label": "Auteur de la citation",
       "default": "Camille R. — Aix-en-Provence"
     }
   ],
@@ -42,22 +68,22 @@
       "type": "stat",
       "name": "Chiffre clé",
       "settings": [
-        {
-          "type": "text",
-          "id": "value",
-          "label": "Valeur",
-          "default": "1 200+"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Libellé",
-          "default": "foyers éclairés"
-        }
+        { "type": "text", "id": "value", "label": "Valeur", "default": "1 200+" },
+        { "type": "text", "id": "label", "label": "Libellé", "default": "foyers éclairés" }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        { "type": "text", "id": "author", "label": "Prénom", "default": "Sophie L." },
+        { "type": "text", "id": "date", "label": "Date relative", "default": "il y a 2 jours" },
+        { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "body", "label": "Avis", "default": "Magnifique en vrai, encore plus que sur les photos." }
       ]
     }
   ],
-  "max_blocks": 3,
+  "max_blocks": 16,
   "presets": [
     {
       "name": "Preuve sociale",
